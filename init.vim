@@ -9,6 +9,13 @@ nmap ,L <Plug>(easymotion-overwin-line)
 map  ,w <Plug>(easymotion-bd-w)
 nmap ,w <Plug>(easymotion-overwin-w)
 "---
+"
+"move in insert mode
+inoremap <silent> <c-h> <c-o>h
+inoremap <silent> <c-j> <c-o>j
+inoremap <silent> <c-k> <c-o>k
+inoremap <silent> <c-l> <c-o>l
+
 "  another esc
 inoremap ;j <esc>
 
@@ -48,11 +55,10 @@ nnoremap <silent> <a-l> <C-w>l
 
 
 nmap <silent> <a-.> :bnext<cr>
-nmap <silent><a-,> :bprevious<cr>
+nmap <silent> <a-,> :bprevious<cr>
 
 
 " lazygit
-" nnoremap   <silent>   <F5>   :AsyncRun -mode=term -pos=floaterm -width=0.9 lazygit<CR>
 nnoremap   <silent>   <F5>   :FloatermNew --height=0.9 --width=0.9 --wintype=float --name=floaterm1 --autoclose=2 lazygit<CR>
 
 " floating term
@@ -62,7 +68,7 @@ nnoremap   <silent>   <F8>    :FloatermPrev<CR>
 tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <F9>    :FloatermNext<CR>
 tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+nnoremap   <silent>   <F12>   :w<CR> :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
 "swap windows
@@ -130,7 +136,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 " last n lines visible
-set scrolloff=7
+set scrolloff=4
 
 " Отображает координаты курсора
 set ruler
@@ -196,23 +202,14 @@ Plugin 'vim-airline/vim-airline'
 " icons in nerdtree and explorer
 Plugin 'ryanoasis/vim-devicons'
 
-" :G git command
-Plugin 'tpope/vim-fugitive'
-
 " highlight for func 
 Plugin 'nvim-treesitter/nvim-treesitter'
-
-" lib for async plugin
-Plugin 'nvim-lua/plenary.nvim'
 
 " custom popup window for another plugins
 Plugin 'nvim-lua/popup.nvim'
 
 " auto pairs...
 Plugin 'windwp/nvim-autopairs'
-
-" status in bottom bar
-Plugin 'nvim-lua/lsp-status.nvim'
 
 " float term
 Plugin 'voldikss/vim-floaterm'
@@ -221,6 +218,7 @@ Plugin 'voldikss/vim-floaterm'
 Plugin 'skywind3000/asynctasks.vim'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'skywind3000/asyncrun.extra'
+Plugin 'nvim-lua/plenary.nvim'
 
 " last place for reopen file
 Plugin 'farmergreg/vim-lastplace'
@@ -228,7 +226,7 @@ Plugin 'farmergreg/vim-lastplace'
 " dashboard
 Plugin 'mhinz/vim-startify'
 
-" another tagbar
+" tagbar
 Plugin 'liuchengxu/vista.vim'
 
 " dox comment
@@ -239,6 +237,10 @@ Plugin 'rhysd/clever-f.vim'
 
 " scheme 
 Plugin 'sainnhe/sonokai'
+Plugin 'folke/tokyonight.nvim'
+Plugin 'sainnhe/everforest'
+Plugin 'catppuccin/nvim'
+Plugin 'sainnhe/edge'
 Plugin 'dracula/vim'
 
 " fast motion
@@ -281,4 +283,4 @@ let g:airline#extensions#tabline#formatter = 'default'
 
 " цветовая схема
 "
- colorscheme sonokai
+ colorscheme edge
