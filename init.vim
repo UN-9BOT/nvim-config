@@ -11,10 +11,10 @@ nmap ,w <Plug>(easymotion-overwin-w)
 "---
 "
 "move in insert mode
-inoremap <silent> <c-h> <c-o>h
-inoremap <silent> <c-j> <c-o>j
-inoremap <silent> <c-k> <c-o>k
-inoremap <silent> <c-l> <c-o>l
+inoremap <silent> <c-h> <esc>i
+inoremap <silent> <c-j> <esc>ja
+inoremap <silent> <c-k> <esc>ka
+inoremap <silent> <c-l> <esc>la
 
 "  another esc
 inoremap ;j <esc>
