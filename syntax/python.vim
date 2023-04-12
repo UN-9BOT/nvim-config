@@ -1,0 +1,1 @@
+:TSBufEnable highlight
