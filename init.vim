@@ -82,22 +82,20 @@ imap <c-space> <Plug>(asyncomplete_force_refresh)
 nmap <F4> :ALEFix<CR>
 let g:ale_virtualtext_cursor = 'current'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" let g:ale_echo_msg_format = '%s'
-let b:ale_linters = {'python': ['flake8', 'bandit', 'mypy'], 'c': ['clangd']}
-let b:ale_fixers = {'python': ['black'], 'c': ['clang-format']}
-" let g:ale_completion_enabled = 1
-nmap <buffer> gd <plug>(lsp-definition)
-nmap <buffer> gs <plug>(lsp-document-symbol-search)
-nmap <buffer> gr <plug>(lsp-references)
-nmap <buffer> gt <plug>(lsp-type-definition)
-nmap <buffer> <leader>rn <plug>(lsp-rename)
-nmap <buffer> [g <plug>(ale_previous_wrap)
-nmap <buffer> ]g <plug>(ale_next_wrap)
-nmap <silent> <buffer> <c-k> <plug>(lsp-hover)
-nmap <silent> <buffer> <c-j> :ALEPopulateLocList<CR>
+let g:ale_linters = {'python': ['pycodestyle', 'pydocstyle', 'flake8', 'bandit', 'mypy'], 'c': ['clangd']}
+let g:ale_fixers = {'python': ['black'], 'c': ['clang-format']}
+nmap  gd <plug>(lsp-definition)
+nmap  gs <plug>(lsp-document-symbol-search)
+nmap  gr <plug>(lsp-references)
+nmap  gt <plug>(lsp-type-definition)
+nmap  <leader>rn <plug>(lsp-rename)
+nmap  [g <plug>(ale_previous_wrap)
+nmap  ]g <plug>(ale_next_wrap)
+nmap <silent>  <c-k> <plug>(lsp-hover)
+nmap <silent>  <c-j> :ALEPopulateLocList<CR>
 
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    " let g:lsp_format_sync_timeout = 1000
+    " autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
     
     " refer to doc to add more commands
 
