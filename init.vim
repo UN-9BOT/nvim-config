@@ -66,7 +66,7 @@ nmap <silent> <a-,> :bprevious<cr>
 nnoremap   <silent>   <F5>   :FloatermNew --height=0.9 --width=0.9 --wintype=float --name=floaterm1 --autoclose=2 lazygit<CR>
 
 " floating term
-nnoremap   <silent>   <F12>   :w<CR> :FloatermToggle<CR>
+nnoremap   <silent>   <F12>   :w<CR>:FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
 "swap windows
@@ -136,7 +136,7 @@ set ruler
 set cursorline
 " вертикальная черта для отображения границ кода (читаемость)
 highlight ColorColumn ctermbg=gray
-set colorcolumn=109
+set colorcolumn=79
 " перенос строки если выход за 80 символов
 set wrap
 
