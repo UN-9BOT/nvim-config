@@ -12,6 +12,8 @@ nmap <s-j> 10jzz
 nmap <s-k> 10kzz
 "---
 "
+" for associatee in comand line vim
+cnoreabbrev W w
 
 " telescope bind
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
