@@ -28,8 +28,8 @@ inoremap <silent> <c-k> <esc>ka
 inoremap <silent> <c-l> <esc>la
 
 "  another esc
-inoremap <silent> ;j <esc>:noh<CR>
-nnoremap <silent> ;j <esc>:noh<CR>
+inoremap <silent> ;j <esc>:noh<CR>:w<cr>
+nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
 
 " only write
 nmap <F2> :w<CR>
@@ -81,11 +81,13 @@ nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 
 "for LSP server
 imap <c-space> <Plug>(asyncomplete_force_refresh)
-nmap <F4> :ALEFix<CR>
+nmap <F8> :w<cr>:!autopep8 % -a --in-place<cr><cr>
+nmap <F4> :w<cr>:ALEFix<CR>
 let g:ale_virtualtext_cursor = 'current'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {'python': ['pycodestyle', 'pydocstyle', 'flake8', 'bandit', 'mypy'], 'c': ['clangd']}
-let g:ale_fixers = {'python': ['black'], 'c': ['clang-format']}
+" let g:ale_linters = {'python': ['ruff', 'pycodestyle', 'pydocstyle', 'flake8', 'bandit', 'mypy', 'pyright'], 'c': ['clangd']}
+let g:ale_linters = {'python': ['ruff', 'pydocstyle', 'flake8', 'bandit', 'mypy'], 'c': ['clangd', 'cppcheck', 'clangtidy']}
+let g:ale_fixers = {'python': ['black'], 'c': ['astyle']}
 nmap  gd <plug>(lsp-definition)
 nmap  gs <plug>(lsp-document-symbol-search)
 nmap  gr <plug>(lsp-references)
