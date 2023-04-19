@@ -19,7 +19,6 @@ Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
 Plugin 'mattn/vim-lsp-settings'
 Plugin 'rhysd/vim-lsp-ale' 
 
-
 " swap windows with \yw \pw
 Plugin 'wesQ3/vim-windowswap'
 
@@ -82,7 +81,6 @@ Plugin 'easymotion/vim-easymotion'
 
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
-
 
 "end
 call vundle#end()
