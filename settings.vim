@@ -58,3 +58,6 @@ set fileencodings=utf8,cp1251
 
 " цветовая схема
  colorscheme edge
+
+ " highlight yank text
+ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=350}

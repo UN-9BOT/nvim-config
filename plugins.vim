@@ -19,9 +19,6 @@ Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
 Plugin 'mattn/vim-lsp-settings'
 Plugin 'rhysd/vim-lsp-ale' 
 
-" swap windows with \yw \pw
-Plugin 'wesQ3/vim-windowswap'
-
 " explorer
 Plugin 'preservim/nerdtree'
 
@@ -81,6 +78,12 @@ Plugin 'easymotion/vim-easymotion'
 
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
+" blankline
+Plugin 'lukas-reineke/indent-blankline.nvim'
+
+" resize window
+Plugin 'simeji/winresizer'
 
 "end
 call vundle#end()

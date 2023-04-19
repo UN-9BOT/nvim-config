@@ -16,4 +16,4 @@ source ~/.config/nvim/plugins/todo-comments.vim
 source ~/.config/nvim/plugins/vim-airline.vim
 source ~/.config/nvim/plugins/vim-easymotion.vim
 source ~/.config/nvim/plugins/vim-floaterm.vim
-source ~/.config/nvim/plugins/vim-windowswap.vim
+source ~/.config/nvim/plugins/indent-blankline.vim
