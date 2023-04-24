@@ -7,9 +7,9 @@ let g:rnvimr_ranger_cmd = ['ranger', '--cmd=set draw_borders both']
 
 nnoremap <silent> <space>r :RnvimrToggle<CR>
 tnoremap <silent> <space>r <C-\><C-n>:RnvimrToggle<CR>
-" let g:rnvimr_action = {
-"             \ '<cr>': 'NvimEdit edit',
-"             \ '<C-t>': 'NvimEdit tabedit',
-"             \ '<C-x>': 'NvimEdit split',
-"             \ '<C-v>': 'NvimEdit vsplit',
-"             \ }
+let g:rnvimr_action = {
+            \ '<cr>': 'NvimEdit edit',
+            \ '<C-t>': 'NvimEdit tabedit',
+            \ '<A-i>': 'NvimEdit split',
+            \ '<C-i>': 'NvimEdit vsplit',
+            \ }

@@ -48,7 +48,7 @@ Plugin 'voldikss/vim-floaterm'
 
 " async tasks
 Plugin 'skywind3000/asynctasks.vim'
-" Plugin 'skywind3000/asyncrun.vim'
+"Plugin 'skywind3000/asyncrun.vim'
 Plugin 'skywind3000/asyncrun.extra'
 Plugin 'nvim-lua/plenary.nvim'
 

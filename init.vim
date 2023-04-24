@@ -17,3 +17,4 @@ source ~/.config/nvim/plugins/vim-easymotion.vim
 source ~/.config/nvim/plugins/vim-floaterm.vim
 source ~/.config/nvim/plugins/indent-blankline.vim
 source ~/.config/nvim/plugins/rnvimr.vim
+source ~/.config/nvim/plugins/treesitter.vim
