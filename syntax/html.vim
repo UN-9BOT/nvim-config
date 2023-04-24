@@ -1,1 +1,1 @@
-TSBufToggle highlight
+TSToggle highlight

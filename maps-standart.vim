@@ -1,6 +1,10 @@
 " lazygit (no plugin, but with Floaterm)
 nnoremap   <silent>   <F5>   :FloatermNew --height=0.9 --width=0.9 --wintype=float --name=floaterm1 --autoclose=2 lazygit<CR>
 
+" backspace
+" inoremap <BS> <Esc>dd
+inoremap <C-b> <C-\><C-o>db
+inoremap <C-w> <C-\><C-o>dw
 
 " for move in windows
 nnoremap <silent> <a-h> <C-w>h
@@ -32,11 +36,9 @@ nmap <F2> :w<CR>
 " tagbar
 nmap <F3> :Vista<CR>
 
-" compile with gcc
 " for system buffer paste and copy
-nmap <C-S-v> "+p
-vmap <C-S-c> "+y
-"
+set clipboard=unnamedplus
+
 "copy all text in system buffer
 nmap <F6> gg<S-v>G"+y
 
@@ -47,6 +49,14 @@ nmap <leader>] :NERDTreeFocus<CR>
 " for associatee in comand line vim
 cnoreabbrev W w
 
-" for fast move
-nmap <s-j> 10jzz
-nmap <s-k> 10kzz
+" for fast move with plugin vim-smooth-scroll
+noremap <silent> <s-k> :call smooth_scroll#up(&scroll/2, 10, 2)<CR>
+noremap <silent> <s-j> :call smooth_scroll#down(&scroll/2, 10, 2)<CR>
+" nmap <s-j> 10jzz
+" nmap <s-k> 10kzz
+nnoremap ;l $
+nnoremap ;h 0
+vnoremap ;l $
+vnoremap ;h 0
+
+

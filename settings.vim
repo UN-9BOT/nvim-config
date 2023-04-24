@@ -1,5 +1,10 @@
 " python path
 let g:python3_host_prog = '/usr/bin/python3'
+let g:rnvimr_ranger_cmd= ["/usr/bin/python3"]
+
+" отключает смещение при отрытии или закрытии буфера
+set noautowriteall
+set lazyredraw
 
 " aвтообновление изменений в файле
 set autoread
@@ -14,7 +19,7 @@ set undofile
 " номера строк
 set number
 " относительная нумерация от текущей строки (для удобной навигации)
-set relativenumber
+" set relativenumber
 
 " хоткеи для русской раскладки в нормальном режиме
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>

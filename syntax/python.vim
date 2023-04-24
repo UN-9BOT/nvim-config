@@ -1,1 +1,1 @@
-:TSBufEnable highlight
+TSToggle highlight

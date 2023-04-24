@@ -1,4 +1,3 @@
-syn match Function /\w\+\((\)\@=/
-set foldmethod=manual
-TSBufToggle highlight
+"syn match Function /\w\+\((\)\@=/
+TSToggle highlight
 

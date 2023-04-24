@@ -19,9 +19,6 @@ Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
 Plugin 'mattn/vim-lsp-settings'
 Plugin 'rhysd/vim-lsp-ale' 
 
-" explorer
-Plugin 'preservim/nerdtree'
-
 " commentary \/
 Plugin 'tpope/vim-commentary'
 
@@ -51,15 +48,12 @@ Plugin 'voldikss/vim-floaterm'
 
 " async tasks
 Plugin 'skywind3000/asynctasks.vim'
-Plugin 'skywind3000/asyncrun.vim'
+" Plugin 'skywind3000/asyncrun.vim'
 Plugin 'skywind3000/asyncrun.extra'
 Plugin 'nvim-lua/plenary.nvim'
 
 " last place for reopen file
 Plugin 'farmergreg/vim-lastplace'
-
-" dashboard
-Plugin 'mhinz/vim-startify'
 
 " tagbar
 Plugin 'liuchengxu/vista.vim'
@@ -75,6 +69,7 @@ Plugin 'sainnhe/edge'
 
 " fast motion
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'justinmk/vim-sneak'
 
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
@@ -84,6 +79,14 @@ Plugin 'lukas-reineke/indent-blankline.nvim'
 
 " resize window
 Plugin 'simeji/winresizer'
+
+" ranger
+Plugin 'kevinhwang91/rnvimr'
+
+" smooth scroll
+Plugin 'terryma/vim-smooth-scroll'
+
+
 
 "end
 call vundle#end()
