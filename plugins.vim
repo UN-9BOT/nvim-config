@@ -8,21 +8,28 @@ Plugin 'VundleVim/Vundle.vim'
 
 "lsp and autocomplete
 Plugin 'dense-analysis/ale'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'thomasfaingnaert/vim-lsp-snippets'
+Plugin 'prabirshrestha/vim-lsp' " keys
+Plugin 'mattn/vim-lsp-settings' " setup in :Lsp
+Plugin 'rhysd/vim-lsp-ale' "more linters ...
+Plugin 'prabirshrestha/async.vim' " Completition 
+Plugin 'prabirshrestha/asyncomplete.vim' " Completition 
+Plugin 'prabirshrestha/asyncomplete-lsp.vim' " Completition 
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'thomasfaingnaert/vim-lsp-snippets'
 Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
-Plugin 'mattn/vim-lsp-settings'
-Plugin 'rhysd/vim-lsp-ale' 
+
+" async tasks
+Plugin 'skywind3000/asynctasks.vim'
+"Plugin 'skywind3000/asyncrun.vim'
+Plugin 'skywind3000/asyncrun.extra'
+Plugin 'nvim-lua/plenary.nvim'
 
 " commentary \/
 Plugin 'tpope/vim-commentary'
 
 " theme
+Plugin 'sainnhe/edge'
 Plugin 'rebelot/kanagawa.nvim'
 
 " todo note on left bar
@@ -46,11 +53,6 @@ Plugin 'windwp/nvim-autopairs'
 " float term
 Plugin 'voldikss/vim-floaterm'
 
-" async tasks
-Plugin 'skywind3000/asynctasks.vim'
-"Plugin 'skywind3000/asyncrun.vim'
-Plugin 'skywind3000/asyncrun.extra'
-Plugin 'nvim-lua/plenary.nvim'
 
 " last place for reopen file
 Plugin 'farmergreg/vim-lastplace'
@@ -63,9 +65,6 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 " for f-key
 Plugin 'rhysd/clever-f.vim'
-
-" scheme 
-Plugin 'sainnhe/edge'
 
 " fast motion
 Plugin 'easymotion/vim-easymotion'
