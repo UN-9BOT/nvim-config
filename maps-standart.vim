@@ -50,8 +50,10 @@ nmap <leader>] :NERDTreeFocus<CR>
 cnoreabbrev W w
 
 " for fast move with plugin vim-smooth-scroll
-noremap <silent> <s-k> :call smooth_scroll#up(&scroll/2, 10, 2)<CR>
-noremap <silent> <s-j> :call smooth_scroll#down(&scroll/2, 10, 2)<CR>
+nnoremap <silent> <s-k> :call smooth_scroll#up(&scroll/2, 10, 2)<CR>
+nnoremap <silent> <s-j> :call smooth_scroll#down(&scroll/2, 10, 2)<CR>
+vnoremap <silent> <s-k> 19kzz
+vnoremap <silent> <s-j> 19jzz
 " nmap <s-j> 10jzz
 " nmap <s-k> 10kzz
 nnoremap ;l $
