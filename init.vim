@@ -6,6 +6,7 @@ source ~/.config/nvim/plugins.vim
 
 " custom settings for nvim
 source ~/.config/nvim/settings.vim
+source ~/.config/nvim/functions.vim
 
 " for all plugins
 source ~/.config/nvim/plugins/lsp-map.vim

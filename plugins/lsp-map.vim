@@ -16,11 +16,13 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+let g:ale_python_black_options = '-l 79 --skip-string-normalization'
+let g:ale_python_autopep8_options = '--aggressive'
 let g:ale_virtualtext_cursor = 'current'
 let g:ale_echo_msg_format = '%s > [%severity%]-[%linter%]'
 let g:ale_loclist_msg_format = ' %s > [%severity%]-[%linter%] >> %...code...%'
 let g:ale_linters = {'python': ['ruff', 'pydocstyle', 'flake8', 'bandit', 'mypy', 'prospector', 'pylint'], 'c': ['clangd', 'cppcheck', 'clangtidy'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy']}
-let g:ale_fixers = {'python': ['black'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
+let g:ale_fixers = {'python': ['autopep8'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_lint_delay = 1000
