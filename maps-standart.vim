@@ -42,10 +42,6 @@ set clipboard=unnamedplus
 "copy all text in system buffer
 nmap <F6> gg<S-v>G"+y
 
-" open explorer
-nmap <C-t> :NERDTreeToggle<CR>
-nmap <leader>] :NERDTreeFocus<CR>
-
 " for associatee in comand line vim
 cnoreabbrev W w
 

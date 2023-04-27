@@ -1,6 +1,6 @@
 "for LSP server
 imap <c-space> <Plug>(asyncomplete_force_refresh)
-nmap <F8> :w<cr>:!autopep8 % -a --in-place<cr><cr>
+" nmap <F8> :w<cr>:!autopep8 % -a --in-place<cr><cr>
 nmap <F4> :w<cr>:ALEFix<CR>
 nmap  gd <plug>(lsp-definition)
 nmap  gs <plug>(lsp-document-symbol-search)
