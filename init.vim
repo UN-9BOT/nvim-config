@@ -19,3 +19,5 @@ source ~/.config/nvim/plugins/vim-floaterm.vim
 source ~/.config/nvim/plugins/indent-blankline.vim
 source ~/.config/nvim/plugins/rnvimr.vim
 source ~/.config/nvim/plugins/treesitter.vim
+source ~/.config/nvim/plugins/doxygen.vim
+source ~/.config/nvim/plugins/doge.vim

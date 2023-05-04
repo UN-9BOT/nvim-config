@@ -48,8 +48,8 @@ cnoreabbrev W w
 " for fast move with plugin vim-smooth-scroll
 nnoremap <silent> <s-k> :call smooth_scroll#up(&scroll/2, 10, 2)<CR>
 nnoremap <silent> <s-j> :call smooth_scroll#down(&scroll/2, 10, 2)<CR>
-vnoremap <silent> <s-k> 19kzz
-vnoremap <silent> <s-j> 19jzz
+vnoremap <silent> <s-k> 5k
+vnoremap <silent> <s-j> 5j
 " nmap <s-j> 10jzz
 " nmap <s-k> 10kzz
 nnoremap ;l $
@@ -57,4 +57,5 @@ nnoremap ;h 0
 vnoremap ;l $
 vnoremap ;h 0
 
-
+" для скобок
+nnoremap ( ciw()<esc>Pb<esc>hi

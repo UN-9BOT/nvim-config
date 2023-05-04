@@ -85,7 +85,8 @@ Plugin 'kevinhwang91/rnvimr'
 " smooth scroll
 Plugin 'terryma/vim-smooth-scroll'
 
-
+" autodoc
+Plugin 'kkoomen/vim-doge'
 
 "end
 call vundle#end()
