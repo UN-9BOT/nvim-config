@@ -8,9 +8,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 "lsp and autocomplete
 Plugin 'dense-analysis/ale'
-Plugin 'prabirshrestha/vim-lsp' " keys
 Plugin 'mattn/vim-lsp-settings' " setup in :Lsp
 Plugin 'rhysd/vim-lsp-ale' "more linters ...
+Plugin 'prabirshrestha/vim-lsp' " keys
 Plugin 'prabirshrestha/async.vim' " Completition 
 Plugin 'prabirshrestha/asyncomplete.vim' " Completition 
 Plugin 'prabirshrestha/asyncomplete-lsp.vim' " Completition 
@@ -21,26 +21,25 @@ Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
 
 " async tasks
 Plugin 'skywind3000/asynctasks.vim'
-"Plugin 'skywind3000/asyncrun.vim'
 Plugin 'skywind3000/asyncrun.extra'
 Plugin 'nvim-lua/plenary.nvim'
+"Plugin 'skywind3000/asyncrun.vim'
 
 " commentary \/
 Plugin 'tpope/vim-commentary'
 
 " theme
 Plugin 'sainnhe/edge'
-Plugin 'rebelot/kanagawa.nvim'
 
 " todo note on left bar
 Plugin 'folke/todo-comments.nvim'
 
 " bottom bar
 Plugin 'vim-airline/vim-airline'
-Plugin 'mhinz/vim-signify'
 
-" icons in nerdtree and explorer
+" icons
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'nvim-tree/nvim-web-devicons'
 
 " highlight for func 
 Plugin 'nvim-treesitter/nvim-treesitter'
@@ -54,15 +53,8 @@ Plugin 'windwp/nvim-autopairs'
 " float term
 Plugin 'voldikss/vim-floaterm'
 
-
 " last place for reopen file
 Plugin 'farmergreg/vim-lastplace'
-
-" tagbar
-Plugin 'liuchengxu/vista.vim'
-
-" dox comment
-Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 " for f-key
 Plugin 'rhysd/clever-f.vim'
@@ -72,9 +64,9 @@ Plugin 'easymotion/vim-easymotion'
 " Plugin 'justinmk/vim-sneak'
 
 "fzf finder
-Plugin 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plugin 'nvim-telescope/telescope.nvim'
 
-" blankline
+" blankline (вложенность функций)
 Plugin 'lukas-reineke/indent-blankline.nvim'
 
 " resize window
@@ -88,10 +80,9 @@ Plugin 'terryma/vim-smooth-scroll'
 
 " autodoc
 Plugin 'kkoomen/vim-doge'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 "markdown
-" Plugin 'preservim/vim-markdown'
-" Plugin 'godlygeek/tabular'
 Plugin 'shime/vim-livedown'
 
 " surround ("' [ { }]')
@@ -99,6 +90,7 @@ Plugin 'tpope/vim-surround'
 
 " auto tab
 Plugin 'tpope/vim-sleuth'
+
 "end
 call vundle#end()
 filetype plugin indent on

@@ -33,8 +33,6 @@ nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
 " only write
 nmap <F2> :w<CR>
 
-" tagbar
-nmap <F3> :Vista<CR>
 
 " for system buffer paste and copy
 set clipboard=unnamedplus
