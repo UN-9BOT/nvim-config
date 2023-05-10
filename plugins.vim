@@ -37,6 +37,7 @@ Plugin 'folke/todo-comments.nvim'
 
 " bottom bar
 Plugin 'vim-airline/vim-airline'
+Plugin 'mhinz/vim-signify'
 
 " icons in nerdtree and explorer
 Plugin 'ryanoasis/vim-devicons'
@@ -93,21 +94,12 @@ Plugin 'kkoomen/vim-doge'
 " Plugin 'godlygeek/tabular'
 Plugin 'shime/vim-livedown'
 
+" surround ("' [ { }]')
+Plugin 'tpope/vim-surround'
+
+" auto tab
+Plugin 'tpope/vim-sleuth'
 "end
 call vundle#end()
 filetype plugin indent on
 
-function! AirlineInit()
-    " let g:airline_section_a = airline#section#create([])
-    " let g:airline_section_b = airline#section#create_left([])
-    " let g:airline_section_c = airline#section#create([])
-    " let g:airline_section_x = airline#section#create([])
-    " let g:airline_section_y = airline#section#create([])
-    " let g:airline_section_z = airline#section#create_right([])
-    " let g:airline_section_error = airline#section#create_right([])
-    " let g:airline_section_gutter = airline#section#create_right([])
-    let g:airline_section_warning = airline#section#create_right([])
-    let g:airline_section_z = airline#section#create(['branch'])
-endfunction
-
-autocmd VimEnter * call AirlineInit()
