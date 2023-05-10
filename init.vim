@@ -21,3 +21,4 @@ source ~/.config/nvim/plugins/rnvimr.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/doxygen.vim
 source ~/.config/nvim/plugins/doge.vim
+source ~/.config/nvim/plugins/livedown.vim
