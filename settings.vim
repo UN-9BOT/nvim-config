@@ -2,9 +2,6 @@
 let g:python3_host_prog = '/usr/bin/python3'
 let g:rnvimr_ranger_cmd= ["/usr/bin/python3"]
 
-" отключает смещение при отрытии или закрытии буфера
-set noautowriteall
-set lazyredraw
 
 " aвтообновление изменений в файле
 set autoread
@@ -23,6 +20,9 @@ set relativenumber
 
 " хоткеи для русской раскладки в нормальном режиме
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+" всегда отображать левый столбец знаков
+set signcolumn=yes
  
 " устраняет баги с неверной шириной табов
 set smarttab
@@ -69,3 +69,9 @@ colorscheme edge
 
  " highlight yank text
 au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=350}
+
+" отключает автосохранение при переключении между буферами
+" set noautowriteall
+"
+" отключает смещение при отрытии или закрытии буфера
+" set lazyredraw

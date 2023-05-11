@@ -37,3 +37,4 @@ endfunction
 
 autocmd InsertLeave * call SetUsLayout()
 " END ---- change layout ----
+

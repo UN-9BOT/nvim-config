@@ -1,8 +1,4 @@
-" lazygit (no plugin, but with Floaterm)
-nnoremap   <silent>   <F5>   :FloatermNew --height=0.9 --width=0.9 --wintype=float --name=floaterm1 --autoclose=2 lazygit<CR>
-
 " backspace
-" inoremap <BS> <Esc>dd
 inoremap <C-b> <C-\><C-o>db
 inoremap <C-w> <C-\><C-o>dw
 
@@ -16,10 +12,6 @@ nnoremap <silent> <a-l> <C-w>l
 nmap <silent> <a-.> :bnext<cr>
 nmap <silent> <a-,> :bprevious<cr>
 
-" add void line
-nmap ,o m`o<Esc>``
-nmap ,O m`O<Esc>``
-
 "move in insert mode
 inoremap <silent> <c-h> <esc>i
 inoremap <silent> <c-j> <esc>ja
@@ -29,10 +21,6 @@ inoremap <silent> <c-l> <esc>la
 "  another esc
 inoremap <silent> ;j <esc>:noh<CR>:w<cr>
 nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
-
-" only write
-nmap <F2> :w<CR>
-
 
 " for system buffer paste and copy
 set clipboard=unnamedplus
@@ -57,3 +45,4 @@ vnoremap ;h 0
 
 " для скобок
 nnoremap ( ciw()<esc>Pb<esc>hi
+

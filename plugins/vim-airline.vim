@@ -4,6 +4,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#coc#enabled = 1
+
 function! AirlineInit()
     " let g:airline_section_a = airline#section#create([])
     " let g:airline_section_b = airline#section#create_left([])

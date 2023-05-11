@@ -1,23 +1,67 @@
-"for LSP server
-imap <c-space> <Plug>(asyncomplete_force_refresh)
-" nmap <F8> :w<cr>:!autopep8 % -a --in-place<cr><cr>
-nmap <F4> :w<cr>:ALEFix<CR>
-nmap  gd <plug>(lsp-definition)
-nmap  gs <plug>(lsp-document-symbol-search)
-nmap  gr <plug>(lsp-references)
-nmap  gt <plug>(lsp-type-definition)
-nmap  <leader>rn <plug>(lsp-rename)
-nmap  <c-p> <plug>(ale_previous_wrap)
-nmap  <c-n> <plug>(ale_next_wrap)
-nmap <silent>  <c-k> <plug>(lsp-hover)
-nmap <silent>  <c-j> :ALEPopulateLocList<CR>
+"  _____ COC _____
+" autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
+" Applying code actions to the selected code block
+nmap <silent> ga <Plug>(coc-codeaction-line)
+xmap <silent> ga <Plug>(coc-codeaction-selected)
+nmap <silent> gA <Plug>(coc-codeaction)
+
+" Docs
+nnoremap <silent> <c-k> :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+
+
+" highlight for cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" timing between update
+set updatetime=300
+
+
+
+" Add (Neo)Vim's native statusline support
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" snippets
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+
+" _____ ALE _____
 let g:ale_python_black_options = '-l 79 --skip-string-normalization'
 let g:ale_python_autopep8_options = '--aggressive'
+
 " let g:ale_virtualtext_cursor = 'current'
 " let g:ale_echo_msg_format = '%s > [%severity%]-[%linter%]'
 " let g:ale_loclist_msg_format = ' %s > [%severity%]-[%linter%] >> %...code...%'
@@ -25,12 +69,10 @@ let g:ale_echo_msg_format = '%s'
 let g:ale_loclist_msg_format = ' %s'
 let g:ale_linters = {'python': ['mypy', 'flake8', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy']}
 let g:ale_fixers = {'python': ['autopep8'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
-let g:airline#extensions#ale#enabled = 1
 let g:ale_use_neovim_diagnostics_api = 1
 " let g:ale_lint_delay = 1000
+let g:ale_disable_lsp = 1
 
-
-
-
-
-
+" nmap <silent>  <c-j> :ALEPopulateLocList<CR>
+nmap <silent>  <c-j> :TroubleToggle<CR><a-k>
+nmap <F4> :w<cr>:ALEFix<CR>

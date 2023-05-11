@@ -1,8 +1,8 @@
-" mapping standart key without plugins mapping
-source ~/.config/nvim/maps-standart.vim
-
 " for poweron plugins
 source ~/.config/nvim/plugins.vim
+
+" mapping standart key without plugins mapping
+source ~/.config/nvim/maps-standart.vim
 
 " custom settings for nvim
 source ~/.config/nvim/settings.vim
@@ -20,6 +20,6 @@ source ~/.config/nvim/plugins/indent-blankline.vim
 source ~/.config/nvim/plugins/rnvimr.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/doxygen.vim
-source ~/.config/nvim/plugins/doge.vim
+source ~/.config/nvim/plugins/pydoc.vim
 source ~/.config/nvim/plugins/livedown.vim
-
+source ~/.config/nvim/plugins/trouble.vim
