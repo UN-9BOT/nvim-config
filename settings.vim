@@ -51,11 +51,11 @@ set wrap
 
 " включает мышь (выделение и перемещение) / sgr - new mode for mouse in
 " classic vim after 7.3.6
+set mousehide
 set mouse=a
 " set ttymouse=sgr
 " set ttymouse=xterm2
 " скрывает мышь при вводе с клавиатуры
-set mousehide
 
 " кодировка вводимого текста
 set termencoding=utf-8

@@ -30,7 +30,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 "markdown
 Plugin 'shime/vim-livedown'
 
-" surround ("' [ { }]')
+" surround ("' [ { }]')  --> ysiw | cs'" | ds"
 Plugin 'tpope/vim-surround'
 
 " auto tab
@@ -77,6 +77,8 @@ Plugin 'nvim-tree/nvim-web-devicons'
 " highlight for func 
 Plugin 'nvim-treesitter/nvim-treesitter'
 
+" transparent
+Plugin 'tribela/vim-transparent'
 
 "end
 call vundle#end()

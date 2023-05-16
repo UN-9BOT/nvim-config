@@ -37,6 +37,12 @@ set updatetime=300
 " Add (Neo)Vim's native statusline support
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
 " snippets
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
@@ -67,12 +73,15 @@ let g:ale_python_autopep8_options = '--aggressive'
 " let g:ale_loclist_msg_format = ' %s > [%severity%]-[%linter%] >> %...code...%'
 let g:ale_echo_msg_format = '%s'
 let g:ale_loclist_msg_format = ' %s'
-let g:ale_linters = {'python': ['mypy', 'flake8', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy']}
-let g:ale_fixers = {'python': ['autopep8'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
+let g:ale_linters = {'python': ['mypy', 'ruff', 'flake8', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy', 'splint'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy']}
+" let g:ale_fixers = {'python': ['autopep8'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
 let g:ale_use_neovim_diagnostics_api = 1
+let g:ale_completion_enabled = 0
+" let g:ale_disable_lsp = 1
 " let g:ale_lint_delay = 1000
-let g:ale_disable_lsp = 1
 
 " nmap <silent>  <c-j> :ALEPopulateLocList<CR>
 nmap <silent>  <c-j> :TroubleToggle<CR><a-k>
-nmap <F4> :w<cr>:ALEFix<CR>
+" nmap <F4> :w<cr>:ALEFix<CR>
+nmap <F4> :w<CR>:CocCommand editor.action.formatDocument<CR>
+

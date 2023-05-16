@@ -1,1 +1,14 @@
-{"suggest.noselect": true}
+{
+  "coc.source.around.enable": true,
+  "coc.source.buffer.enable": true,
+  "diagnostic.displayByAle": true,
+  "suggest.noselect": true,
+  "python.formatting.autopep8Path": "autopep8",
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+    "--max-line-length",
+    "79",
+    "--experimental"
+  ],
+  "htmldjango.formatting.provider": "djlint",
+}

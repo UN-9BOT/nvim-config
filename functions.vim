@@ -32,7 +32,7 @@ au VimLeave * :call MakeSession()
 
 " NOTE: change laoyout keymap when leaving insert mode
 function! SetUsLayout()
-  silent !setxkbmap -layout us,ru
+  silent !xkb-switch -s us
 endfunction
 
 autocmd InsertLeave * call SetUsLayout()

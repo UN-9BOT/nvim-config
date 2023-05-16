@@ -21,6 +21,8 @@ inoremap <silent> <c-l> <esc>la
 "  another esc
 inoremap <silent> ;j <esc>:noh<CR>:w<cr>
 nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
+inoremap <silent> жо <esc>:noh<CR>:w<cr>
+nnoremap <silent> жо <esc>:noh<CR>:w<cr>
 
 " for system buffer paste and copy
 set clipboard=unnamedplus
