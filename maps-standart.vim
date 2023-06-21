@@ -48,3 +48,5 @@ vnoremap ;h 0
 " для скобок
 nnoremap ( ciw()<esc>Pb<esc>hi
 
+" delete buffer
+map <leader>d :bd<CR>

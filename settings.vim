@@ -44,7 +44,7 @@ set ruler
 set cursorline
 " вертикальная черта для отображения границ кода (читаемость)
 highlight ColorColumn ctermbg=gray
-set colorcolumn=79
+set colorcolumn=88
 " перенос строки если выход за 80 символов
 set wrap
 

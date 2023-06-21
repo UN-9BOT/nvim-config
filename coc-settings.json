@@ -3,12 +3,26 @@
   "coc.source.buffer.enable": true,
   "diagnostic.displayByAle": true,
   "suggest.noselect": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--skip-string-normalization",
+    "--preview",
+  ],
   "python.formatting.autopep8Path": "autopep8",
-  "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": [
     "--max-line-length",
-    "79",
-    "--experimental"
+    "88",
   ],
   "htmldjango.formatting.provider": "djlint",
+  "sql.database": "mysql",
+  "sql.formatOptions": {
+    "language": "mysql",
+    "keywordCase": "upper",
+    "indentStyle": "tabularRight",
+    "linesBetweenQueries": 2
+  },
+  "python.linting.flake8Args": [
+    "--max-line-length",
+    "88"
+  ],
 }

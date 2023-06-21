@@ -11,7 +11,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Applying code actions to the selected code block
 nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
-nmap <silent> gA <Plug>(coc-codeaction)
+nmap <silent> gA <Plug>(coc-codeaction-source)
 
 " Docs
 nnoremap <silent> <c-k> :call ShowDocumentation()<CR>
@@ -65,16 +65,16 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 
 " _____ ALE _____
-let g:ale_python_black_options = '-l 79 --skip-string-normalization'
+let g:ale_python_black_options = '-l 88 --skip-string-normalization'
 let g:ale_python_autopep8_options = '--aggressive'
 
-" let g:ale_virtualtext_cursor = 'current'
+let g:ale_virtualtext_cursor = 'disable'
 " let g:ale_echo_msg_format = '%s > [%severity%]-[%linter%]'
 " let g:ale_loclist_msg_format = ' %s > [%severity%]-[%linter%] >> %...code...%'
 let g:ale_echo_msg_format = '%s'
 let g:ale_loclist_msg_format = ' %s'
-let g:ale_linters = {'python': ['mypy', 'ruff', 'flake8', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy', 'splint'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy']}
-" let g:ale_fixers = {'python': ['autopep8'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
+let g:ale_linters = {'python': ['mypy', 'ruff', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy', 'splint'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy'], 'cpp': ['clag', 'clangcheck', 'clangtidy']}
+" let g:ale_fixers = {'python': ['black'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
 let g:ale_use_neovim_diagnostics_api = 1
 let g:ale_completion_enabled = 0
 " let g:ale_disable_lsp = 1
@@ -84,4 +84,13 @@ let g:ale_completion_enabled = 0
 nmap <silent>  <c-j> :TroubleToggle<CR><a-k>
 " nmap <F4> :w<cr>:ALEFix<CR>
 nmap <F4> :w<CR>:CocCommand editor.action.formatDocument<CR>
+
+let g:ale_python_mypy_options = '--disable-var-annotated'
+
+
+
+" CPP C++
+let g:ale_cpp_clang_options = '--std=c++11 -Wall'
+let g:ale_cpp_clangtidy_options = '-Wall -std=c++11 -x c++ '
+let g:ale_cpp_clangcheck_options = '-extra-arg -Xanalyzer -extra-arg -analyzer-output=text -- -Wall -std=c++11 -x c++ '
 

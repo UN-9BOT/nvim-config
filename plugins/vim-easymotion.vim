@@ -1,7 +1,7 @@
 " easy motion --
-map  ,f :call CloseALEList()<cr><Plug>(easymotion-bd-f)
-nmap ,f :call CloseALEList()<cr><Plug>(easymotion-overwin-f)
-nmap s :call CloseALEList()<cr><Plug>(easymotion-overwin-f2)
+map  s :call CloseALEList()<cr><Plug>(easymotion-bd-f)
+nmap s :call CloseALEList()<cr><Plug>(easymotion-overwin-f)
+nmap ,s :call CloseALEList()<cr><Plug>(easymotion-overwin-f2)
 map  ,w :call CloseALEList()<cr><Plug>(easymotion-bd-w)
 nmap ,w :call CloseALEList()<cr><Plug>(easymotion-overwin-w)
 map ,l <Plug>(easymotion-lineforward)

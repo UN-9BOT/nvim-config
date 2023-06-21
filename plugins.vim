@@ -73,6 +73,7 @@ Plugin 'vim-airline/vim-airline'
 " icons
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'nvim-tree/nvim-web-devicons'
+Plugin 'ryanoasis/vim-devicons'
 
 " highlight for func 
 Plugin 'nvim-treesitter/nvim-treesitter'
@@ -80,6 +81,10 @@ Plugin 'nvim-treesitter/nvim-treesitter'
 " transparent
 Plugin 'tribela/vim-transparent'
 
+" nvim in browser
+Plugin 'subnut/nvim-ghost.nvim'
+
 "end
 call vundle#end()
 filetype plugin indent on
+
