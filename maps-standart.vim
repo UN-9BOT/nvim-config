@@ -36,6 +36,8 @@ cnoreabbrev W w
 " for fast move with plugin vim-smooth-scroll
 nnoremap <silent> <s-k> :call smooth_scroll#up(&scroll/2, 10, 2)<CR>
 nnoremap <silent> <s-j> :call smooth_scroll#down(&scroll/2, 10, 2)<CR>
+" nnoremap <silent> <s-k> {
+" nnoremap <silent> <s-j> }
 vnoremap <silent> <s-k> 5k
 vnoremap <silent> <s-j> 5j
 " nmap <s-j> 10jzz
@@ -49,4 +51,4 @@ vnoremap ;h 0
 nnoremap ( ciw()<esc>Pb<esc>hi
 
 " delete buffer
-map <leader>d :bd<CR>
+map <leader>d :TroubleClose<cr>:bd<CR>

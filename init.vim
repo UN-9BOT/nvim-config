@@ -1,7 +1,8 @@
 " for poweron plugins
 source ~/.config/nvim/plugins.vim
 
-" mapping standart key without plugins mapping
+" mapping standart key
+" source ~/.config/nvim/plugins/vim-which-key.vim
 source ~/.config/nvim/maps-standart.vim
 
 " custom settings for nvim
@@ -23,3 +24,15 @@ source ~/.config/nvim/plugins/doxygen.vim
 source ~/.config/nvim/plugins/pydoc.vim
 source ~/.config/nvim/plugins/livedown.vim
 source ~/.config/nvim/plugins/trouble.vim
+source ~/.config/nvim/plugins/telekasten.vim
+source ~/.config/nvim/plugins/autopair.vim
+source ~/.config/nvim/plugins/codeium.vim
+source ~/.config/nvim/plugins/vista.vim
+source ~/.config/nvim/plugins/ghost.vim
+
+
+
+lua << EOF
+  require("telescope").load_extension("live_grep_args")
+EOF
+

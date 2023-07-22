@@ -3,6 +3,9 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:rnvimr_ranger_cmd= ["/usr/bin/python3"]
 
 
+" игнорирование регистра при поиске
+set ignorecase
+
 " aвтообновление изменений в файле
 set autoread
 
@@ -44,8 +47,8 @@ set ruler
 set cursorline
 " вертикальная черта для отображения границ кода (читаемость)
 highlight ColorColumn ctermbg=gray
-set colorcolumn=88
-" перенос строки если выход за 80 символов
+set colorcolumn=120
+" перенос строки если выход за 120 символов
 set wrap
 
 

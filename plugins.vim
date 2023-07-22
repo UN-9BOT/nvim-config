@@ -13,13 +13,15 @@ Plugin 'tpope/vim-dadbod'
 Plugin 'honza/vim-snippets'
 Plugin 'folke/trouble.nvim'
 Plugin 'nvim-lua/plenary.nvim'
-
+ 
 " float term
 Plugin 'voldikss/vim-floaterm'
-
+ 
 " ranger for vim
 Plugin 'kevinhwang91/rnvimr'
-
+" Plugin 'ptzz/lf.vim'
+Plugin 'vifm/vifm.vim'
+ 
 " smooth scroll
 Plugin 'terryma/vim-smooth-scroll'
 
@@ -51,6 +53,8 @@ Plugin 'easymotion/vim-easymotion'
 
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-telescope/telescope-live-grep-args.nvim'
+
 
 " blankline (вложенность функций)
 Plugin 'lukas-reineke/indent-blankline.nvim'
@@ -84,7 +88,22 @@ Plugin 'tribela/vim-transparent'
 " nvim in browser
 Plugin 'subnut/nvim-ghost.nvim'
 
+" telekasten (obsidian)
+Plugin 'renerocksai/telekasten.nvim'
+
+" help keybindings
+" Plugin 'liuchengxu/vim-which-key'
+
+" multiple cursor
+" Plugin 'mg979/vim-visual-multi'
+
+" autocomplete
+" Plugin 'codota/tabnine-nvim'
+Plugin 'Exafunction/codeium.vim'
+
+" tag bar right
+Plugin 'liuchengxu/vista.vim'
+
 "end
 call vundle#end()
 filetype plugin indent on
-

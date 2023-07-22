@@ -3,7 +3,7 @@
   "coc.source.buffer.enable": true,
   "diagnostic.displayByAle": true,
   "suggest.noselect": true,
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "autopep8",
   "python.formatting.blackArgs": [
     "--skip-string-normalization",
     "--preview",
@@ -11,7 +11,7 @@
   "python.formatting.autopep8Path": "autopep8",
   "python.formatting.autopep8Args": [
     "--max-line-length",
-    "88",
+    "120",
   ],
   "htmldjango.formatting.provider": "djlint",
   "sql.database": "mysql",
@@ -23,6 +23,6 @@
   },
   "python.linting.flake8Args": [
     "--max-line-length",
-    "88"
+    "120"
   ],
 }
