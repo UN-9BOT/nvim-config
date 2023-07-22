@@ -27,12 +27,10 @@ source ~/.config/nvim/plugins/trouble.vim
 source ~/.config/nvim/plugins/telekasten.vim
 source ~/.config/nvim/plugins/autopair.vim
 source ~/.config/nvim/plugins/codeium.vim
-source ~/.config/nvim/plugins/vista.vim
 source ~/.config/nvim/plugins/ghost.vim
-
-
-
-lua << EOF
-  require("telescope").load_extension("live_grep_args")
-EOF
-
+source ~/.config/nvim/plugins/rainbow.vim
+source ~/.config/nvim/plugins/tagbar.vim
+source ~/.config/nvim/plugins/marks.vim
+source ~/.config/nvim/plugins/gitsigns.vim
+source ~/.config/nvim/plugins/auto-session.vim
+source ~/.config/nvim/plugins/transparent.vim

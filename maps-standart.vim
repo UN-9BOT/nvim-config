@@ -43,9 +43,9 @@ vnoremap <silent> <s-j> 5j
 " nmap <s-j> 10jzz
 " nmap <s-k> 10kzz
 nnoremap ;l $
-nnoremap ;h 0
+nnoremap ;h ^
 vnoremap ;l $
-vnoremap ;h 0
+vnoremap ;h ^
 
 " для скобок
 nnoremap ( ciw()<esc>Pb<esc>hi

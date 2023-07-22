@@ -20,7 +20,7 @@ Plugin 'voldikss/vim-floaterm'
 " ranger for vim
 Plugin 'kevinhwang91/rnvimr'
 " Plugin 'ptzz/lf.vim'
-Plugin 'vifm/vifm.vim'
+" Plugin 'vifm/vifm.vim'
  
 " smooth scroll
 Plugin 'terryma/vim-smooth-scroll'
@@ -36,7 +36,7 @@ Plugin 'shime/vim-livedown'
 Plugin 'tpope/vim-surround'
 
 " auto tab
-Plugin 'tpope/vim-sleuth'
+" Plugin 'tpope/vim-sleuth'
 
 " theme
 Plugin 'sainnhe/edge'
@@ -49,21 +49,22 @@ Plugin 'rhysd/clever-f.vim'
 
 " fast motion
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'folke/flash.nvim'   " bug with motion
 " Plugin 'justinmk/vim-sneak'
 
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-telescope/telescope-live-grep-args.nvim'
 
-
-" blankline (вложенность функций)
+" blankline вложенность функций
 Plugin 'lukas-reineke/indent-blankline.nvim'
 
 " resize window
 Plugin 'simeji/winresizer'
 
-" auto pairs...
+" auto pairs... brackets rainbow
 Plugin 'windwp/nvim-autopairs'
+Plugin 'luochen1990/rainbow'
 
 " commentary \/
 Plugin 'tpope/vim-commentary'
@@ -75,7 +76,6 @@ Plugin 'folke/todo-comments.nvim'
 Plugin 'vim-airline/vim-airline'
 
 " icons
-" Plugin 'ryanoasis/vim-devicons'
 Plugin 'nvim-tree/nvim-web-devicons'
 Plugin 'ryanoasis/vim-devicons'
 
@@ -83,7 +83,8 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'nvim-treesitter/nvim-treesitter'
 
 " transparent
-Plugin 'tribela/vim-transparent'
+" Plugin 'tribela/vim-transparent'
+Plugin 'xiyaowong/transparent.nvim'
 
 " nvim in browser
 Plugin 'subnut/nvim-ghost.nvim'
@@ -95,14 +96,22 @@ Plugin 'renerocksai/telekasten.nvim'
 " Plugin 'liuchengxu/vim-which-key'
 
 " multiple cursor
-" Plugin 'mg979/vim-visual-multi'
+Plugin 'mg979/vim-visual-multi'
 
 " autocomplete
-" Plugin 'codota/tabnine-nvim'
 Plugin 'Exafunction/codeium.vim'
 
 " tag bar right
-Plugin 'liuchengxu/vista.vim'
+Plugin 'preservim/tagbar'
+
+" marks
+Plugin 'chentoast/marks.nvim'
+
+" git signs
+Plugin 'lewis6991/gitsigns.nvim'
+
+" sessions
+Plugin 'rmagatti/auto-session'
 
 "end
 call vundle#end()
