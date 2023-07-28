@@ -17,11 +17,11 @@
 nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>v <cmd>lua require('telescope.builtin').grep_strings()<cr>
-vnoremap <leader>v <cmd>lua require('telescope.builtin').grep_strings()<cr>
+nnoremap <leader>v <cmd>lua require('telescope.builtin').grep_string()<cr>
+vnoremap <leader>v <cmd>lua require('telescope.builtin').grep_string()<cr>
 
-nnoremap <leader>c <cmd>lua require('telescope.builtin').registers()<cr>
-vnoremap <leader>c xh<cmd>lua require('telescope.builtin').registers()<cr>
+nnoremap <leader>r <cmd>lua require('telescope.builtin').registers()<cr>
+vnoremap <leader>r xh<cmd>lua require('telescope.builtin').registers()<cr>
 nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
 nnoremap <leader>j <cmd>lua require('telescope.builtin').diagnostics()<cr>
 
@@ -53,7 +53,17 @@ require('telescope').setup{
 			"migrations",
 		},
   },
+  extensions = {
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf"},
+      -- find command (defaults to `fd`)
+      find_cmd = "rg"
+    }
+  },
 }
+require('telescope').load_extension('media_files')
 require("telescope").load_extension("live_grep_args")
 EOF
 

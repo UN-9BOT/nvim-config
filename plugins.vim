@@ -32,7 +32,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 "markdown
 Plugin 'shime/vim-livedown'
 
-" surround ("' [ { }]')  --> ysiw | cs'" | ds"
+" surround ("' [ { }]')  --> ysiw' | cs'" | ds"
 Plugin 'tpope/vim-surround'
 
 " auto tab
@@ -55,6 +55,7 @@ Plugin 'easymotion/vim-easymotion'
 "fzf finder
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-telescope/telescope-live-grep-args.nvim'
+Plugin 'nvim-telescope/telescope-media-files.nvim'
 
 " blankline вложенность функций
 Plugin 'lukas-reineke/indent-blankline.nvim'
@@ -83,8 +84,8 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'nvim-treesitter/nvim-treesitter'
 
 " transparent
-" Plugin 'tribela/vim-transparent'
-Plugin 'xiyaowong/transparent.nvim'
+Plugin 'tribela/vim-transparent'
+" Plugin 'xiyaowong/transparent.nvim'  # bug with inline text for lsp
 
 " nvim in browser
 Plugin 'subnut/nvim-ghost.nvim'
@@ -98,7 +99,7 @@ Plugin 'renerocksai/telekasten.nvim'
 " multiple cursor
 Plugin 'mg979/vim-visual-multi'
 
-" autocomplete
+" autocomplete   (and in coc coc-tabnine)
 Plugin 'Exafunction/codeium.vim'
 
 " tag bar right

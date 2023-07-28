@@ -3,10 +3,11 @@
   "coc.source.buffer.enable": true,
   "diagnostic.displayByAle": true,
   "suggest.noselect": true,
-  "python.formatting.provider": "autopep8",
+  "python.formatting.provider": "black",
   "python.formatting.blackArgs": [
-    "--skip-string-normalization",
     "--preview",
+    "--line-length",
+    "120"
   ],
   "python.formatting.autopep8Path": "autopep8",
   "python.formatting.autopep8Args": [

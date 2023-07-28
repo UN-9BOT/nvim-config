@@ -33,4 +33,3 @@ source ~/.config/nvim/plugins/tagbar.vim
 source ~/.config/nvim/plugins/marks.vim
 source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/auto-session.vim
-source ~/.config/nvim/plugins/transparent.vim

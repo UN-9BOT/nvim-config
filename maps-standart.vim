@@ -51,4 +51,4 @@ vnoremap ;h ^
 nnoremap ( ciw()<esc>Pb<esc>hi
 
 " delete buffer
-map <leader>d :TroubleClose<cr>:bd<CR>
+nnoremap <silent> Q :TroubleClose<cr>:bd<CR>
