@@ -34,12 +34,17 @@ set autoindent
 " автотабуляция для фигурных скобок
 set cindent
 
+" for C file (google style)
+autocmd FileType c setlocal sw=2 ts=2 ai et softtabstop=2
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
 " last n lines visible
 set scrolloff=4
+
+
 
 " Отображает координаты курсора
 set ruler
@@ -78,3 +83,6 @@ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeou
 "
 " отключает смещение при отрытии или закрытии буфера
 " set lazyredraw
+"
+" автосохранение при выходе из режима вставки
+autocmd InsertLeave * write

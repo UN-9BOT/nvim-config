@@ -18,11 +18,15 @@ inoremap <silent> <c-j> <esc>ja
 inoremap <silent> <c-k> <esc>ka
 inoremap <silent> <c-l> <esc>la
 
-"  another esc
-inoremap <silent> ;j <esc>:noh<CR>:w<cr>
-nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
-inoremap <silent> жо <esc>:noh<CR>:w<cr>
-nnoremap <silent> жо <esc>:noh<CR>:w<cr>
+"  another esc  (отключил -> отказ в пользу esc)
+" inoremap <silent> ;j <esc>:noh<CR>:w<cr>
+" nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
+" inoremap <silent> жо <esc>:noh<CR>:w<cr>
+" nnoremap <silent> жо <esc>:noh<CR>:w<cr>
+inoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
+vnoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
+nnoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
+
 
 " for system buffer paste and copy
 set clipboard=unnamedplus

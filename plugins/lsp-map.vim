@@ -74,7 +74,7 @@ let g:ale_virtualtext_cursor = 'disable'
 let g:ale_echo_msg_format = '%s'
 let g:ale_loclist_msg_format = ' %s'
 let g:ale_linters = {'python': ['mypy', 'ruff', 'bandit'], 'c': ['clangd', 'cppcheck', 'clangtidy', 'splint'], 'html': ['vscode-html-languageserver', 'tidy'], 'htmldjango': ['vscode-html-languageserver', 'tidy'], 'cpp': ['clag', 'clangcheck', 'clangtidy']}
-let g:ale_fixers = {'python': ['yapf'], 'c': ['astyle'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
+let g:ale_fixers = {'python': ['yapf'], 'c': ['clang-format'], 'htmldjango': ['html-beautify'], 'html': ['html-beautify']}
 let g:ale_use_neovim_diagnostics_api = 1
 let g:ale_completion_enabled = 0
 " let g:ale_disable_lsp = 1
@@ -83,7 +83,7 @@ let g:ale_completion_enabled = 0
 " nmap <silent>  <c-j> :ALEPopulateLocList<CR>
 nmap <silent>  <c-j> :TroubleToggle<CR><a-k>
 nmap <F3> :w<cr>:ALEFix<CR>
-nmap <F4> :w<CR>:CocCommand editor.action.formatDocument<CR>
+nmap <F4> :w<CR>:CocCommand editor.action.formatDocument<CR>:w<CR>
 
 let g:ale_python_mypy_options = '--disable-var-annotated'
 

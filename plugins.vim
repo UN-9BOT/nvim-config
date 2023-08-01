@@ -13,6 +13,8 @@ Plugin 'tpope/vim-dadbod'
 Plugin 'honza/vim-snippets'
 Plugin 'folke/trouble.nvim'
 Plugin 'nvim-lua/plenary.nvim'
+" Plugin 'Maan2003/lsp_lines.nvim'  " double diagnostic
+
  
 " float term
 Plugin 'voldikss/vim-floaterm'
@@ -113,6 +115,11 @@ Plugin 'lewis6991/gitsigns.nvim'
 
 " sessions
 Plugin 'rmagatti/auto-session'
+
+" smart menu in : ? /
+Plugin 'gelguy/wilder.nvim'
+
+
 
 "end
 call vundle#end()
