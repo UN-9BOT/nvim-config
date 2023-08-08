@@ -113,6 +113,9 @@ Plugin 'chentoast/marks.nvim'
 " git signs
 Plugin 'lewis6991/gitsigns.nvim'
 
+" lazy git
+Plugin 'kdheepak/lazygit.nvim'
+
 " sessions
 Plugin 'rmagatti/auto-session'
 

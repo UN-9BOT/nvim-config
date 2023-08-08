@@ -56,3 +56,7 @@ nnoremap ( ciw()<esc>Pb<esc>hi
 
 " delete buffer
 nnoremap <silent> Q :TroubleClose<cr>:bd<CR>
+
+
+" для + - перемещения
+nnoremap <silent> = +
