@@ -1,29 +1,49 @@
 {
-  "coc.source.around.enable": true,
-  "coc.source.buffer.enable": true,
-  "diagnostic.displayByAle": true,
-  "suggest.noselect": true,
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--preview",
-    "--line-length",
-    "120"
-  ],
-  "python.formatting.autopep8Path": "autopep8",
-  "python.formatting.autopep8Args": [
-    "--max-line-length",
-    "120",
-  ],
-  "htmldjango.formatting.provider": "djlint",
-  "sql.database": "mysql",
-  "sql.formatOptions": {
-    "language": "mysql",
-    "keywordCase": "upper",
-    "indentStyle": "tabularRight",
-    "linesBetweenQueries": 2
-  },
-  "python.linting.flake8Args": [
-    "--max-line-length",
-    "120"
-  ],
+    "coc.source.around.enable": true,
+    "coc.source.buffer.enable": true,
+    "diagnostic.displayByAle": true,
+    "suggest.noselect": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--preview",
+        "--line-length",
+        "120"
+    ],
+    "python.formatting.autopep8Path": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "120",
+    ],
+    "htmldjango.formatting.provider": "djlint",
+    "sql.database": "mysql",
+    "sql.formatOptions": {
+        "language": "mysql",
+        "keywordCase": "upper",
+        "indentStyle": "tabularRight",
+        "linesBetweenQueries": 2
+    },
+    "python.linting.flake8Args": [
+        "--max-line-length",
+        "120"
+    ],
+    "languageserver": {
+        "sourcery": {
+            "command": "sourcery",
+            "args": [
+                "lsp"
+            ],
+            "filetypes": [
+                "python"
+            ],
+            "initializationOptions": {
+                "extension_version": "coc.vim",
+                "editor_version": "vim"
+            },
+            "settings": {
+                "sourcery": {
+                    "metricsEnabled": true
+                }
+            }
+        }
+    }
 }

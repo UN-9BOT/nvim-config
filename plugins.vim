@@ -116,12 +116,23 @@ Plugin 'lewis6991/gitsigns.nvim'
 " lazy git
 Plugin 'kdheepak/lazygit.nvim'
 
+" figutive
+Plugin 'tpope/vim-fugitive'
+
 " sessions
 Plugin 'rmagatti/auto-session'
 
 " smart menu in : ? /
 Plugin 'gelguy/wilder.nvim'
 
+" autosave
+Plugin '907th/vim-auto-save'
+
+" python import
+Plugin 'mgedmin/python-imports.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'skywind3000/gutentags_plus'
+" Plugin 'dhananjaylatkar/cscope_maps.nvim' " cscope keymaps
 
 
 "end

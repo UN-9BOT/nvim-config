@@ -85,4 +85,6 @@ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeou
 " set lazyredraw
 "
 " автосохранение при выходе из режима вставки
-autocmd InsertLeave * write
+" autocmd InsertLeave * write " не корректно с плагинами
+" autocmd TextChanged,TextChangedI <buffer> silent write
+let g:auto_save = 1 " Plugin '907th/vim-auto-save'

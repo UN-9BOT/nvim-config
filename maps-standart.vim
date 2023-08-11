@@ -23,9 +23,9 @@ inoremap <silent> <c-l> <esc>la
 " nnoremap <silent> ;j <esc>:noh<CR>:w<cr>
 " inoremap <silent> жо <esc>:noh<CR>:w<cr>
 " nnoremap <silent> жо <esc>:noh<CR>:w<cr>
-inoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
-vnoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
-nnoremap <silent> <ESC> <ESC>:w<CR>:noh<CR>
+inoremap <silent> <ESC> <ESC>:noh<CR>
+vnoremap <silent> <ESC> <ESC>:noh<CR>
+nnoremap <silent> <ESC> <ESC>:noh<CR>
 
 
 " for system buffer paste and copy

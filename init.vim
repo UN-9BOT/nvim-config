@@ -35,3 +35,5 @@ source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/auto-session.vim
 source ~/.config/nvim/plugins/wilder.vim
 " source ~/.config/nvim/plugins/lsp-lines.vim
+source ~/.config/nvim/plugins/lazygit.vim
+source ~/.config/nvim/plugins/tags.vim
