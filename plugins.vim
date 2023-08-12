@@ -134,6 +134,16 @@ Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'skywind3000/gutentags_plus'
 " Plugin 'dhananjaylatkar/cscope_maps.nvim' " cscope keymaps
 
+" context 
+Plugin 'nvim-treesitter/nvim-treesitter-context'
+
+" cursor word
+Plugin 'itchyny/vim-cursorword'
+
+" repeat for dot .
+Plugin 'tpope/vim-repeat'
+
+
 
 "end
 call vundle#end()

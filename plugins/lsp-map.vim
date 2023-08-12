@@ -27,7 +27,7 @@ endfunction
 
 
 " highlight for cursor
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " timing between update
 set updatetime=300
