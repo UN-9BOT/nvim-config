@@ -156,8 +156,9 @@ lazy.setup({
 	},
 
 	-- python import
-	-- {"mgedmin/python-imports.vim",},
-	-- -- tag for import
+	{"mgedmin/python-imports.vim",},
+
+	-- tag for import
 	{
 		"ludovicchabant/vim-gutentags",
 		config = function()

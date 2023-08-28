@@ -15,7 +15,7 @@ vim.g.gutentags_cache_dir = vim.fn.expand('~/.cache/tags')
 vim.g.gutentags_plus_switch = 1
 
 -- ignore
-vim.g.gutentags_ctags_exclude = {'vendor/*', 'tmp/*', 'log/*', 'coverage/*', 'doc/*', '.mypy_cache', '.venv'}
+vim.g.gutentags_ctags_exclude = {'vendor/*', 'tmp/*', 'log/*', 'coverage/*', 'doc/*', '.mypy_cache', '.venv', '*.yaml'}
 
 -- set statusline
 vim.opt.statusline:append('%{gutentags#statusline()}') 

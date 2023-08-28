@@ -5,7 +5,7 @@ local M = {
 M.config = function()
 	---@diagnostic disable-next-line: undefined-global
 	local b = vim.keymap.set
-	b("n", "<Leader><Leader>", "<Plug>(easymotion-overwin-f)")
+    b("n", ";", "<Plug>(easymotion-overwin-f)")
 	b("", ",l", "<Plug>(easymotion-lineforward)")
 	b("", ",j", "<Plug>(easymotion-j)")
 	b("", ",k", "<Plug>(easymotion-k)")
