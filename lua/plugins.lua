@@ -194,9 +194,17 @@ lazy.setup({
 	-- neotest
 	-- { "nvim-neotest/neotest" },
 	-- require("plugins.neotest_python"),
-    --
-    --
-    -- tmux
-    -- require("plugins.tmux"),
-    {'christoomey/vim-tmux-navigator'},
+	--
+	--
+	-- tmux
+	-- require("plugins.tmux"),
+	-- { "christoomey/vim-tmux-navigator" },
+
+	-- preview
+	{
+		"dstein64/nvim-scrollview",
+		config = function()
+			vim.g.scrollview_diagnostics_severities = {}
+		end,
+	},
 })

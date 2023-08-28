@@ -36,7 +36,7 @@ function _G.show_docs()
 		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 	end
 end
-keyset("n", "<c-k>", "<CMD>lua _G.show_docs()<CR>", { silent = true })
+keyset("n", "gk", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 keyset("n", "<F4>", ":w<CR>:CocCommand editor.action.formatDocument<CR>:w<CR>", { silent = true })
 
 local opts = { silent = true, nowait = true }
@@ -44,7 +44,7 @@ keyset("n", "ga", "<Plug>(coc-codeaction-line)", opts)
 keyset("x", "ga", "<Plug>(coc-codeaction-selected)", opts)
 keyset("n", "gA", "<Plug>(coc-codeaction-source)", opts)
 
-keyset("n", "<c-j>", ":TroubleToggle<CR><a-k>", { silent = true })
+keyset("n", "gj", ":TroubleToggle<CR><c-k>", { silent = true })
 
 vim.cmd([[inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#_select_confirm() :
