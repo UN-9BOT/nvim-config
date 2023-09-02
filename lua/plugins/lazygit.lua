@@ -10,6 +10,6 @@ M.config = function()
 		vim.g.GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 	end
 
-	vim.keymap.set("n", "<leader>G", ":Neogit<CR>")
+	vim.keymap.set("n", "<leader>G", ":Neogit kind=vsplit<CR>")
 end
 return M

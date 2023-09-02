@@ -40,6 +40,12 @@ lazy.setup({
 	-- cursor context
 	{ "itchyny/vim-cursorword" },
 
+	-- far.vim
+	{ "brooth/far.vim" },
+    
+    -- git diff
+    { "sindrets/diffview.nvim" },
+
 	--
 	--
 	-- WITH CONFIG
@@ -156,7 +162,7 @@ lazy.setup({
 	},
 
 	-- python import
-	{"mgedmin/python-imports.vim",},
+	{ "mgedmin/python-imports.vim" },
 
 	-- tag for import
 	{
