@@ -1,7 +1,6 @@
 ---@diagnostic disable: undefined-global
 local M = {
 	"mfussenegger/nvim-dap",
-	-- "mfussenegger/nvim-dap-python",
 }
 
 -- M.keys = {

@@ -196,11 +196,12 @@ lazy.setup({
 	-- dap debuger
 	-- { "mfussenegger/nvim-dap" },
 	require("plugins.dap"),
-	-- require("plugins.dap_ui"),
+	require("plugins.dap_python"),
+	require("plugins.dap_ui"),
 
 	-- neotest
-	-- { "nvim-neotest/neotest" },
-	-- require("plugins.neotest_python"),
+	{ "nvim-neotest/neotest" },
+	require("plugins.neotest_python"),
 	--
 	--
 	-- tmux
@@ -214,4 +215,5 @@ lazy.setup({
 			vim.g.scrollview_diagnostics_severities = {}
 		end,
 	},
+	require("plugins.telekasten"),
 })

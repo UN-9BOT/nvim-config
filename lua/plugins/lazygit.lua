@@ -11,5 +11,6 @@ M.config = function()
 	end
 
 	vim.keymap.set("n", "<leader>G", ":Neogit kind=vsplit<CR>")
+    vim.keymap.set("n", "<leader>D", ":DiffviewOpen<CR>")
 end
 return M

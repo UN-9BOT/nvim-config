@@ -5,16 +5,16 @@ vim.opt.updatetime = 300
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
 vim.opt.signcolumn = "yes"
-local keyset = vim.keymap.set
+local b = vim.keymap.set
 
-keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
+b("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
 
-keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
+b("n", "gd", "<Plug>(coc-definition)", { silent = true })
+b("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
+b("n", "gi", "<Plug>(coc-implementation)", { silent = true })
+b("n", "gr", "<Plug>(coc-references)", { silent = true })
 
-keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
+b("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
 CheckBackspace = function()
   local col = vim.fn.col(".") - 1
@@ -22,7 +22,7 @@ CheckBackspace = function()
 end
 
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+b("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 -- keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 -- keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
@@ -36,15 +36,15 @@ function _G.show_docs()
 		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 	end
 end
-keyset("n", "gk", "<CMD>lua _G.show_docs()<CR>", { silent = true })
-keyset("n", "<F4>", ":w<CR>:CocCommand editor.action.formatDocument<CR>:w<CR>", { silent = true })
+b("n", "gk", "<CMD>lua _G.show_docs()<CR>", { silent = true })
+b("n", "<F4>", ":CocCommand editor.action.formatDocument<CR>", { silent = true })
 
 local opts = { silent = true, nowait = true }
-keyset("n", "ga", "<Plug>(coc-codeaction-line)", opts)
-keyset("x", "ga", "<Plug>(coc-codeaction-selected)", opts)
-keyset("n", "gA", "<Plug>(coc-codeaction-source)", opts)
+b("n", "ga", "<Plug>(coc-codeaction-line)", opts)
+b("x", "ga", "<Plug>(coc-codeaction-selected)", opts)
+b("n", "gA", "<Plug>(coc-codeaction-source)", opts)
 
-keyset("n", "gj", ":TroubleToggle<CR><c-k>", { silent = true })
+b("n", "gj", ":TroubleToggle<CR><c-k>", { silent = true })
 
 vim.cmd([[inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#_select_confirm() :
@@ -67,3 +67,11 @@ end
 
 vim.g.coc_snippet_next = "<TAB>"
 vim.g.coc_snippet_prev = "<S-TAB>"
+
+
+b("n", "<leader>y", ":<C-u>CocList -A --normal yank<CR>", { silent = true })
+
+
+-- tests
+b("n", "<leader>ptt", "<cmd> CocCommand pyright.singleTest<CR>", { silent = true })
+b("n", "<leader>ptf", "<cmd> CocCommand pyright.fileTest<CR>", { silent = true })

@@ -30,7 +30,7 @@ b("n", "<leader>Y", "<Cmd>%y+<CR>", opts)
 b("n", "Q", "<Cmd>bd<CR>", opts)
 
 -- для + - перемещения
-b("n", "=", "+", opts)
+-- b("n", "=", "+", opts)
 
 -- save session
 b({ "n", "v" }, "ZZ", "<ESC>:SessionSave<cr>ZZ", opts)
