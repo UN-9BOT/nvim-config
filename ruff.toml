@@ -37,6 +37,7 @@ ignore = [
     "S101",  # assert
     "PT023",  # pytest.mark.asyncio
     "B008",  # func in annotation
+    "PT006"  # pytest.mark.parametrize
 ]
 line-length = 120
 select = [
@@ -45,7 +46,7 @@ select = [
     # "D", # pydocstyle
     "E", # pycodestyle
     "F", # Pyflakes
-    "I", # isort
+    # "I", # isort
     "INT", # flake8-gettext
     "N", # pep8-naming
     "PTH", # flake8-use-pathlib

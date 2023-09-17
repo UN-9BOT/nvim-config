@@ -3,27 +3,24 @@ local M = {
 	"mfussenegger/nvim-dap",
 }
 
--- M.keys = {
--- 	{
--- 		"<leader>dPt",
--- 		function()
--- 			require("dap-python").test_method()
--- 		end,
--- 		desc = "Debug Method",
--- 	},
--- 	{
--- 		"<leader>dPc",
--- 		function()
--- 			require("dap-python").test_class()
--- 		end,
--- 		desc = "Debug Class",
--- 	},
--- }
--- M.config = function()
--- 	local path = require("mason-registry").get_package("debugpy"):get_install_path()
--- 	require("dap-python").setup(path .. "/venv/bin/python")
--- 	require("dap-python").test_runner = "pytest"
--- end
+M.keys = {
+    { "<leader>ddb", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+    { "<leader>ddc", function() require("dap").continue() end, desc = "Continue" },
+    { "<leader>ddC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    -- { "<leader>ddg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
+    { "<leader>ddi", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<leader>ddj", function() require("dap").down() end, desc = "Down" },
+    { "<leader>ddk", function() require("dap").up() end, desc = "Up" },
+    { "<leader>ddl", function() require("dap").run_last() end, desc = "Run Last" },
+    { "<leader>ddo", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>ddO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>ddp", function() require("dap").pause() end, desc = "Pause" },
+    { "<leader>ddr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+    { "<leader>dds", function() require("dap").session() end, desc = "Session" },
+    { "<leader>ddt", function() require("dap").terminate() end, desc = "Terminate" },
+    { "<leader>ddw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<leader>tdd", function() require("neotest").run.run({strategy = "dap"}) end, desc = "Debug Nearest" },
+}
 
 M.config = function()
 	local dap = require("dap")

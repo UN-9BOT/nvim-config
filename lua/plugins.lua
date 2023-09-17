@@ -26,6 +26,7 @@ lazy.setup({
 	--
 	-- helper for lua
 	{ "nvim-lua/plenary.nvim" },
+	{ "kkharji/sqlite.lua" },
 
 	-- transparent for nvim
 	{ "tribela/vim-transparent" },
@@ -40,11 +41,11 @@ lazy.setup({
 	-- cursor context
 	{ "itchyny/vim-cursorword" },
 
-	-- far.vim
-	{ "brooth/far.vim" },
-    
-    -- git diff
-    { "sindrets/diffview.nvim" },
+	-- git diff
+	{ "sindrets/diffview.nvim" },
+
+	-- zoom tab (split)
+	{ "dhruvasagar/vim-zoom" },
 
 	--
 	--
@@ -78,6 +79,26 @@ lazy.setup({
 	-- session
 	require("plugins.sessions"),
 
+	{
+		"prochri/telescope-all-recent.nvim",
+		dependencies = {
+			"kkharji/sqlite.lua",
+			"nvim-telescope/telescope.nvim",
+		},
+		-- lazy = true,
+		config = function()
+			require("telescope-all-recent").setup({
+				pickers = {
+					find_files = {
+						disable = false,
+						use_cwd = true,
+						sorting = "frecency",
+					},
+				},
+			})
+		end,
+	},
+
 	-- telescope
 	require("plugins.telescope"),
 
@@ -104,6 +125,9 @@ lazy.setup({
 
 	-- DOC
 	require("plugins.neogen"),
+
+	-- zen mode
+	require("plugins.zen_mode"),
 
 	-- multi cursor
 	require("plugins.vim_visual_multi"),
@@ -216,4 +240,7 @@ lazy.setup({
 		end,
 	},
 	require("plugins.telekasten"),
+	require("plugins.legendary"),
+	require("plugins.hlslens"),
+	require("plugins.fzfx"),
 })

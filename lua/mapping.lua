@@ -38,3 +38,6 @@ b({ "n", "v" }, "ZZ", "<ESC>:SessionSave<cr>ZZ", opts)
 -- remap <c-q> -> q
 b("n", "<c-q>", "q", opts)
 b("n", "q", "<Nop>", opts)
+
+-- TS context
+b("n", "<leader>tc", "<cmd>TSContextToggle<cr>", opts)

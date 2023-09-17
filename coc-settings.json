@@ -3,10 +3,14 @@
     "coc.source.buffer.enable": true,
     "diagnostic.displayByAle": true,
     "python.linting.ruffEnabled": true,
-    "python.linting.ruffArgs": [" --config ~/.config/nvim/ruff.toml"],
+    "python.linting.ruffArgs": [
+        " --config ~/.config/nvim/ruff.toml"
+    ],
     "suggest.noselect": true,
     "pyright.testing.provider": "pytest",
-    "pyright.testing.pytestArgs": ["-vv"],
+    "pyright.testing.pytestArgs": [
+        "-vv"
+    ],
     "diagnostic.showUnused": true,
     "pyright.organizeimports.provider": "isort",
     "python.sortImports.args": [
@@ -39,5 +43,25 @@
         "120"
     ],
     "snippets.ultisnips.pythonPrompt": true,
-
+    "languageserver": {
+        "sourcery": {
+            "command": "sourcery",
+            "args": [
+                "lsp"
+            ],
+            "filetypes": [
+                "python"
+            ],
+            "initializationOptions": {
+                "extension_version": "coc.vim",
+                "editor_version": "vim"
+            },
+            "settings": {
+                "sourcery": {
+                    "metricsEnabled": true
+                }
+            }
+        }
+    },
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd",
 }

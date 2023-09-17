@@ -17,7 +17,7 @@ vim.g.ale_echo_msg_format = '%s > [%severity%]-[%linter%]'
 vim.g.ale_loclist_msg_format = " %s"
 -- vim.g.ale_loclist_msg_format = ' %s > [%severity%]-[%linter%] >> %...code...%'
 
-vim.g.ale_python_mypy_options = "--disable-var-annotated"
+vim.g.ale_python_mypy_options = "--ignore-missing-imports"
 
 vim.g.ale_python_bandit_options = "--skip B101"
 

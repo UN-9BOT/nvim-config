@@ -37,6 +37,7 @@ M.config = function()
 	b("n", "<leader>dts", "<cmd>lua require('neotest').run.stop()<CR>", opts)
 	b("n", "<leader>dtf", "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy='dap'})<CR>", opts)
 	b("n", "<leader>dti", "<cmd>lua require('neotest').summary.toggle()<CR>", opts)
+
 	b("n", "<leader>dtd", "<ESC>:lua require('dap-python').debug_selection()<CR>", opts)
 end
 return M
