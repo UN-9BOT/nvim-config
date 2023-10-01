@@ -1,6 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	lazy = true,
+	lazy = false,
 }
 
 M.config = function()

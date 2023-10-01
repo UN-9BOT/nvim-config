@@ -37,7 +37,8 @@ ignore = [
     "S101",  # assert
     "PT023",  # pytest.mark.asyncio
     "B008",  # func in annotation
-    "PT006"  # pytest.mark.parametrize
+    "PT006",  # pytest.mark.parametrize
+    "PLR0913", # too many arguments for func
 ]
 line-length = 120
 select = [

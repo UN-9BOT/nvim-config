@@ -12,7 +12,8 @@ M.config = function()
 	b({ "n", "v" }, ",c", builtin.git_bcommits_range, opts)
 	b({ "n", "v" }, ",t", builtin.treesitter, opts)
 
-	b("n", ",f", builtin.find_files, opts)
+	b("n", ",f", "<CMD>Telescope find_files<CR>", opts)
+	b("n", ",F", "<CMD>Telescope file_browser<CR>", opts)
 	b("n", ",g", builtin.live_grep, opts)
 	b({ "n", "v" }, ",v", builtin.grep_string, opts)
 	b({ "n", "v" }, ",r", builtin.registers, opts)
@@ -155,7 +156,8 @@ M.config = function()
 			},
 		},
 	})
-	-- require("telescope").load_extension("telescope-all-recent")
+	require("telescope").load_extension("fzf")
+	require("telescope").load_extension("file_browser")
 end
 
 M.dependencies = {

@@ -69,9 +69,4 @@ vim.g.coc_snippet_next = "<TAB>"
 vim.g.coc_snippet_prev = "<S-TAB>"
 
 
-b("n", "<leader>y", ":<C-u>CocList -A --normal yank<CR>", { silent = true })
-
-
--- tests
-b("n", "<leader>ptt", "<cmd> CocCommand pyright.singleTest<CR>", { silent = true })
-b("n", "<leader>ptf", "<cmd> CocCommand pyright.fileTest<CR>", { silent = true })
+b("n", "<leader>c", ":<C-u>CocList -A --normal yank<CR>", { silent = true })

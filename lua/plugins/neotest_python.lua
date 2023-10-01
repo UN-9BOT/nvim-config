@@ -31,8 +31,8 @@ M.config = function()
 	local b = vim.keymap.set
 	local opts = { noremap = true, silent = true }
 
-	b("n", "<leader>dtm", "<cmd>lua require('neotest').run.run({strategy='dap'})<CR>", opts)
-	b("n", "<leader>dtl", "<cmd>lua require('neotest').run.run_last({strategy='dap'})<CR>", opts)
+	b("n", "<leader>dtm", "<cmd>lua require('neotest').run.run()<CR>", opts)
+	b("n", "<leader>dtl", "<cmd>lua require('neotest').run.run_last()<CR>", opts)
 	b("n", "<leader>dto", "<cmd>lua require('neotest').output.open({enter=true})<CR>", opts)
 	b("n", "<leader>dts", "<cmd>lua require('neotest').run.stop()<CR>", opts)
 	b("n", "<leader>dtf", "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy='dap'})<CR>", opts)

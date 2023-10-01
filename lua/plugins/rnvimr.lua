@@ -25,6 +25,14 @@ M.config = function()
 		["<A-i>"] = "NvimEdit split",
 		["<C-i>"] = "NvimEdit vsplit",
 	}
+	vim.g.rnvimr_layout = {
+		relative = "editor",
+		width = vim.fn.float2nr(vim.fn.round(0.95 * vim.o.columns)),
+		height = vim.fn.float2nr(vim.fn.round(0.95 * vim.o.lines)),
+		col = vim.fn.float2nr(vim.fn.round(0.15 * vim.o.columns)),
+		row = vim.fn.float2nr(vim.fn.round(0.15 * vim.o.lines)),
+		style = "minimal",
+	}
 end
 
 return M

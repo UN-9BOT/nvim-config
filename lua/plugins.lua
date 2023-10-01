@@ -38,14 +38,13 @@ lazy.setup({
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-repeat" }, -- repeat for surround
 
-	-- cursor context
-	{ "itchyny/vim-cursorword" },
-
 	-- git diff
 	{ "sindrets/diffview.nvim" },
 
 	-- zoom tab (split)
 	{ "dhruvasagar/vim-zoom" },
+
+	{ "haya14busa/vim-asterisk" },
 
 	--
 	--
@@ -57,9 +56,12 @@ lazy.setup({
 
 	-- theme / colorscheme
 	require("plugins.edge"),
+	-- require("plugins.tokyonight"),
+	-- require("plugins.catpuccin"),
 
-	-- file manager ( ranger )
+	--file manager ( ranger )
 	require("plugins.rnvimr"),
+	require("plugins.nvim_tree"),
 
 	-- scrolling
 	require("plugins.vim_smooth_scroll"),
@@ -101,6 +103,11 @@ lazy.setup({
 
 	-- telescope
 	require("plugins.telescope"),
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
 
 	-- auto-save files
 	require("plugins.vim_auto_save"),
@@ -240,7 +247,5 @@ lazy.setup({
 		end,
 	},
 	require("plugins.telekasten"),
-	require("plugins.legendary"),
 	require("plugins.hlslens"),
-	require("plugins.fzfx"),
 })
