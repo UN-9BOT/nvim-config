@@ -106,6 +106,19 @@ M.config = function()
 				previewer = true,
 				sorting = "frecency",
 			},
+			marks = {
+				layout_config = { height = 0.4 },
+				theme = "ivy",
+				previewer = true,
+				sorting = "frecency",
+			},
+			diagnostics = {
+				layout_config = { height = 0.4 },
+				theme = "ivy",
+				previewer = true,
+				sorting = "frecency",
+                bufnr = 0,
+			},
 			live_grep = {
 				layout_config = {
 					anchor = "N",

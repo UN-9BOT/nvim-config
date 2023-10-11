@@ -44,10 +44,16 @@ lazy.setup({
 	-- zoom tab (split)
 	{ "dhruvasagar/vim-zoom" },
 
+	-- * # highlight
 	{ "haya14busa/vim-asterisk" },
 
-	--
-	--
+	-- marks
+	{ "chentoast/marks.nvim" },
+
+	-- next for move in an In An {["'"]}
+	{ "wellle/targets.vim" },
+	-- { "nvim-treesitter/nvim-treesitter-textobjects" },
+
 	-- WITH CONFIG
 	--
 	--
@@ -227,7 +233,7 @@ lazy.setup({
 	-- dap debuger
 	-- { "mfussenegger/nvim-dap" },
 	require("plugins.dap"),
-	require("plugins.dap_python"),
+	-- require("plugins.dap_python"),
 	require("plugins.dap_ui"),
 
 	-- neotest
@@ -248,4 +254,48 @@ lazy.setup({
 	},
 	require("plugins.telekasten"),
 	require("plugins.hlslens"),
+	-- {
+	-- 	"roobert/tabtree.nvim",
+	-- 	config = function()
+	-- 		require("tabtree").setup({
+	-- 			-- print the capture group name when executing next/previous
+	-- 			--debug = true,
+	--
+	-- 			-- disable key bindings
+	-- 			--key_bindings_disabled = true,
+	--
+	-- 			key_bindings = {
+	-- 				next = "<Tab>",
+	-- 				previous = "<S-Tab>",
+	-- 			},
+	--
+	-- 			-- use :InspectTree to discover the (capture group)
+	-- 			-- @capture_name can be anything
+	-- 			language_configs = {
+	-- 				python = {
+	-- 					target_query = [[
+ --              (string) @string_capture
+ --              (interpolation) @interpolation_capture
+ --              (parameters) @parameters_capture
+ --              (argument_list) @argument_list_capture
+ --            ]],
+	-- 					-- experimental feature, to move the cursor in certain situations like when handling python f-strings
+	-- 					offsets = {
+	-- 						string_start_capture = 1,
+	-- 					},
+	-- 				},
+	-- 			},
+	--
+	-- 			default_config = {
+	-- 				target_query = [[
+ --              (string) @string_capture
+ --              (interpolation) @interpolation_capture
+ --              (parameters) @parameters_capture
+ --              (argument_list) @argument_list_capture
+ --          ]],
+	-- 				offsets = {},
+	-- 			},
+	-- 		})
+	--mgedmin/python-imports.vim 	end,
+	-- },
 })

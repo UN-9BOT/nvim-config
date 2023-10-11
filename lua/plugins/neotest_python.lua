@@ -8,7 +8,7 @@ M.config = function()
 			require("neotest-python")({
 				-- Extra arguments for nvim-dap configuration
 				-- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
-				dap = { justMyCode = false },
+				dap = { justMyCode = true },
 				-- Command line arguments for runner
 				-- Can also be a function to return dynamic values
 				args = {  "--quiet" },
@@ -31,6 +31,7 @@ M.config = function()
 	local b = vim.keymap.set
 	local opts = { noremap = true, silent = true }
 
+	-- b("n", "<leader>dtm", "<cmd>lua require('neotest').run.run({strategy='dap'})<CR>", opts)
 	b("n", "<leader>dtm", "<cmd>lua require('neotest').run.run()<CR>", opts)
 	b("n", "<leader>dtl", "<cmd>lua require('neotest').run.run_last()<CR>", opts)
 	b("n", "<leader>dto", "<cmd>lua require('neotest').output.open({enter=true})<CR>", opts)

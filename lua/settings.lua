@@ -131,14 +131,3 @@ local alpha = function()
 	return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
 end
 vim.g.neovide_background_color = "#5b6178" .. alpha()
-
-
--- vim-cursorword
-vim.g.cursorword_delay = 600
-
-
--- highlight
-vim.cmd([[
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-]])
-

@@ -1,6 +1,6 @@
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 -- delays and poor user experience
-vim.opt.updatetime = 300
+vim.opt.updatetime = 100
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
@@ -10,21 +10,13 @@ local b = vim.keymap.set
 b("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
 
 b("n", "gd", "<Plug>(coc-definition)", { silent = true })
-b("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
+b("n", "gt", "<Plug>(coc-type-definition)", { silent = true })
 b("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 b("n", "gr", "<Plug>(coc-references)", { silent = true })
+b("n", "gj", vim.diagnostic.open_float, { silent = true })
 
 b("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
-CheckBackspace = function()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil  
-end
-
-local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-b("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
--- keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
--- keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
 function _G.show_docs()
 	local cw = vim.fn.expand("<cword>")
@@ -44,7 +36,17 @@ b("n", "ga", "<Plug>(coc-codeaction-line)", opts)
 b("x", "ga", "<Plug>(coc-codeaction-selected)", opts)
 b("n", "gA", "<Plug>(coc-codeaction-source)", opts)
 
-b("n", "gj", ":TroubleToggle<CR><c-k>", { silent = true })
+b("n", "gy", ":TroubleToggle<CR><c-k>", { silent = true })
+-- Highlight the symbol and its references on a CursorHold event(cursor is idle)
+vim.api.nvim_create_augroup("CocGroup", {})
+vim.api.nvim_create_autocmd("CursorHold", {
+    group = "CocGroup",
+    command = "silent call CocActionAsync('highlight')",
+    desc = "Highlight symbol under cursor on CursorHold"
+})
+
+b("n", "<leader>c", ":<C-u>CocList -A --normal yank<CR>", { silent = true })
+
 
 vim.cmd([[inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#_select_confirm() :

@@ -52,3 +52,5 @@ b("n", "q", "<Nop>", opts)
 -- TS context
 b("n", "<leader>tc", "<cmd>TSContextToggle<cr>", opts)
 b("n", "<F9>", "<cmd>make test<cr>", opts)
+
+b("i", "<c-e>", "<c-o>de", opts)
