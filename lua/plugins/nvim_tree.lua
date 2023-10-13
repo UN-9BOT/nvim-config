@@ -21,7 +21,7 @@ M.config = function()
 end
 
 M.keys = {
-	{ "<c-t>", "<cmd>NvimTreeFindFile<CR>", desc = "Toggle NvimTree" },
+	{ "<c-t>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
 }
 
 return M

@@ -36,14 +36,14 @@ b({ "n", "v" }, "<leader>p", '"+p', opts)
 b({ "n", "v" }, "<leader>P", '"+P', opts)
 
 -- delete buffer
-b("n", "Q", "<Cmd>NvimTreeClose<CR><CMD>bd<CR>", opts)
+b("n", "Q", "<CMD>Neotree close<CR><CMD>bd<CR>", opts)
 
 -- для + - перемещения
 -- b("n", "=", "+", opts)
 
 -- save session
-b({ "n", "v" }, "ZZ", "<ESC><cmd>NvimTreeClose<CR><cmd>SessionSave<cr>ZZ", opts)
-b({ "n", "v" }, "ZQ", "<ESC><cmd>NvimTreeClose<CR><cmd>SessionSave<cr>ZQ", opts)
+b({ "n", "v" }, "ZZ", "<ESC><CMD>Neotree close<CR><cmd>SessionSave<cr>ZZ", opts)
+b({ "n", "v" }, "ZQ", "<ESC><CMD>Neotree close<CR><cmd>SessionSave<cr>ZQ", opts)
 
 -- remap <c-q> -> q
 b("n", "<c-q>", "q", opts)

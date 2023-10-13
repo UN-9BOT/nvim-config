@@ -67,7 +67,22 @@ lazy.setup({
 
 	--file manager ( ranger )
 	require("plugins.rnvimr"),
-	require("plugins.nvim_tree"),
+	-- require("plugins.nvim_tree"),
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        -- cmd = "Neotree",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require("neo-tree").setup()
+            vim.cmd([[nnoremap <c-s> :Neotree toggle filesystem reveal position=right<cr>]])
+        end
+
+    },
 
 	-- scrolling
 	require("plugins.vim_smooth_scroll"),
@@ -96,6 +111,7 @@ lazy.setup({
 		-- lazy = true,
 		config = function()
 			require("telescope-all-recent").setup({
+                close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 				pickers = {
 					find_files = {
 						disable = false,
