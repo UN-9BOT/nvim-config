@@ -1,9 +1,9 @@
 vim.g.ale_linters = {
 	python = { "ruff", "mypy", "refurb" },
-	c = { "clangd", "cppcheck", "clangtidy", "splint" },
+	c = { "clangd", "cppcheck", "clang-tidy", "splint" },
 	html = { "vscode-html-languageserver", "tidy" },
 	htmldjango = { "vscode-html-languageserver", "tidy" },
-	cpp = { "clag", "clangcheck", "clangtidy" },
+	cpp = { "clang", "clang-check", "clang-tidy" },
 }
 
 

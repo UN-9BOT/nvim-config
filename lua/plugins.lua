@@ -64,6 +64,9 @@ lazy.setup({
 	require("plugins.edge"),
 	-- require("plugins.tokyonight"),
 	-- require("plugins.catpuccin"),
+    --
+    -- indent (отступы)
+    require("plugins.indent"),
 
 	--file manager ( ranger )
 	require("plugins.rnvimr"),
@@ -259,7 +262,7 @@ lazy.setup({
 	--
 	-- tmux
 	-- require("plugins.tmux"),
-	-- { "christoomey/vim-tmux-navigator" },
+	{ "christoomey/vim-tmux-navigator" },
 
 	-- preview
 	{
