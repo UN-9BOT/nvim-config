@@ -64,13 +64,15 @@ vim.scrolloff = 4
 --
 -- " отображает выделение текущей строки
 vim.opt.cursorline = true
+-- фикс для cursorline
+vim.opt.lazyredraw = true
+
 -- " вертикальная черта для отображения границ кода (читаемость)
 vim.opt.colorcolumn = "120"
 -- перенос строки если выход за 120 символов
 vim.opt.wrap = true
 vim.opt.breakindent = true
 
---
 --
 -- " включает мышь
 vim.opt.mouse = "a"

@@ -53,6 +53,14 @@ lazy.setup({
 	-- next for move in an In An {["'"]}
 	{ "wellle/targets.vim" },
 	-- { "nvim-treesitter/nvim-treesitter-textobjects" },
+	--
+	-- markdown preview
+	{
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+},
 
 	-- WITH CONFIG
 	--
@@ -64,28 +72,28 @@ lazy.setup({
 	require("plugins.edge"),
 	-- require("plugins.tokyonight"),
 	-- require("plugins.catpuccin"),
-    --
-    -- indent (отступы)
-    require("plugins.indent"),
+	--
+	-- indent (отступы)
+	require("plugins.indent"),
 
 	--file manager ( ranger )
 	require("plugins.rnvimr"),
 	-- require("plugins.nvim_tree"),
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        -- cmd = "Neotree",
-        dependencies = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
-        },
-        config = function()
-            require("neo-tree").setup()
-            vim.cmd([[nnoremap <c-s> :Neotree toggle filesystem reveal position=right<cr>]])
-        end
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		-- cmd = "Neotree",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("neo-tree").setup()
+			vim.cmd([[nnoremap <c-s> :Neotree toggle filesystem reveal position=right<cr>]])
+		end
 
-    },
+	},
 
 	-- scrolling
 	require("plugins.vim_smooth_scroll"),
@@ -114,7 +122,7 @@ lazy.setup({
 		-- lazy = true,
 		config = function()
 			require("telescope-all-recent").setup({
-                close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+				close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 				pickers = {
 					find_files = {
 						disable = false,
@@ -163,6 +171,7 @@ lazy.setup({
 
 	-- multi cursor
 	require("plugins.vim_visual_multi"),
+	{ "sunjon/shade.nvim" },
 
 	-- TODO: нужно доделать настройки
 	-- GIT
@@ -176,7 +185,7 @@ lazy.setup({
 	-- -- Lazy Git
 	require("plugins.lazygit"),
 	-- -- Neogit
-	{ "NeogitOrg/neogit", config = true },
+	{ "NeogitOrg/neogit",                       config = true },
 	{ "sindrets/diffview.nvim" },
 
 	-- context func
@@ -293,11 +302,11 @@ lazy.setup({
 	-- 			language_configs = {
 	-- 				python = {
 	-- 					target_query = [[
- --              (string) @string_capture
- --              (interpolation) @interpolation_capture
- --              (parameters) @parameters_capture
- --              (argument_list) @argument_list_capture
- --            ]],
+	--              (string) @string_capture
+	--              (interpolation) @interpolation_capture
+	--              (parameters) @parameters_capture
+	--              (argument_list) @argument_list_capture
+	--            ]],
 	-- 					-- experimental feature, to move the cursor in certain situations like when handling python f-strings
 	-- 					offsets = {
 	-- 						string_start_capture = 1,
@@ -307,11 +316,11 @@ lazy.setup({
 	--
 	-- 			default_config = {
 	-- 				target_query = [[
- --              (string) @string_capture
- --              (interpolation) @interpolation_capture
- --              (parameters) @parameters_capture
- --              (argument_list) @argument_list_capture
- --          ]],
+	--              (string) @string_capture
+	--              (interpolation) @interpolation_capture
+	--              (parameters) @parameters_capture
+	--              (argument_list) @argument_list_capture
+	--          ]],
 	-- 				offsets = {},
 	-- 			},
 	-- 		})

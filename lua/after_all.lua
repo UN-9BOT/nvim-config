@@ -49,3 +49,6 @@ require'marks'.setup {
     }
 }
 b({ "n", "v" }, ",m", "<cmd>MarksQFListGlobal<cr>", opts)
+
+
+vim.g.mkdp_browser = '/usr/bin/brave'
