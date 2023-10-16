@@ -72,4 +72,4 @@ vim.g.coc_snippet_prev = "<S-TAB>"
 
 
 b("n", "<leader>c", ":<C-u>CocList -A --normal yank<CR>", { silent = true })
--- vim.cmd([[nnoremap <silent><expr> <leader>i '"ea<BS>" : coc#refresh()']])
+vim.cmd([[nnoremap <silent><expr> <leader>i "bea\<BS><c-r>=coc#refresh()\<CR>"]])

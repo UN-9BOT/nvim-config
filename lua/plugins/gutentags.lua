@@ -30,4 +30,3 @@ vim.opt.statusline:append("%{gutentags#statusline()}")
 -- 	{ expr = true, replace_keycodes = false, silent = true, nowait = true }
 -- )
 -- "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-vim.cmd([[nnoremap <silent><expr> <leader>i "bea\<BS><c-r>=coc#refresh()\<CR>"]])
