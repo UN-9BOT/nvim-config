@@ -10,6 +10,7 @@ local b = vim.keymap.set
 b("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
 
 b("n", "gd", "<Plug>(coc-definition)", { silent = true })
+b("n", "gd", "gdzt", { silent = true })  -- for top after  go-definition
 b("n", "gt", "<Plug>(coc-type-definition)", { silent = true })
 b("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 b("n", "gr", "<Plug>(coc-references)", { silent = true })
@@ -28,6 +29,7 @@ function _G.show_docs()
 		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
 	end
 end
+
 b("n", "gk", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 b("n", "<F4>", ":CocCommand editor.action.formatDocument<CR>", { silent = true })
 
@@ -40,9 +42,9 @@ b("n", "gy", ":TroubleToggle<CR><c-k>", { silent = true })
 -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
+	group = "CocGroup",
+	command = "silent call CocActionAsync('highlight')",
+	desc = "Highlight symbol under cursor on CursorHold"
 })
 
 b("n", "<leader>c", ":<C-u>CocList -A --normal yank<CR>", { silent = true })

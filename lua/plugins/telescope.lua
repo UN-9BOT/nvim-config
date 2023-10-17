@@ -6,7 +6,7 @@ local M = {
 M.config = function()
 	local b = vim.keymap.set
 	local opts = { noremap = true, silent = true }
-
+    local actions = require("telescope.actions")
 	local builtin = require("telescope.builtin")
 
 	b({ "n", "v" }, ",c", builtin.git_bcommits_range, opts)
@@ -18,6 +18,7 @@ M.config = function()
 	b({ "n", "v" }, ",v", builtin.grep_string, opts)
 	b({ "n", "v" }, ",r", builtin.registers, opts)
 	b("n", "<c-f>", builtin.current_buffer_fuzzy_find, opts)
+	b("n", ",J", builtin.jumplist, opts)
 
 	require("telescope").setup({
 		defaults = {
@@ -117,7 +118,7 @@ M.config = function()
 				theme = "ivy",
 				previewer = true,
 				sorting = "frecency",
-                bufnr = 0,
+				bufnr = 0,
 			},
 			live_grep = {
 				layout_config = {
@@ -167,6 +168,22 @@ M.config = function()
 				},
 				theme = "dropdown",
 			},
+			jumplist = {
+				layout_config = {
+					anchor = "N",
+					height = 0.30,
+					mirror = true,
+					width = 0.95,
+				},
+				theme = "dropdown",
+				mappings = {
+					i = {
+						["<esc>"] = actions.close,
+						["<CR>"] = actions.select_default + actions.center
+					},
+				},
+
+			}
 		},
 	})
 	require("telescope").load_extension("fzf")
@@ -174,10 +191,10 @@ M.config = function()
 end
 
 M.dependencies = {
-      {
-        "prochri/telescope-all-recent.nvim",
-        dependencies = { "kkharji/sqlite.lua" },
-      },
+	{
+		"prochri/telescope-all-recent.nvim",
+		dependencies = { "kkharji/sqlite.lua" },
+	},
 }
 
 return M
