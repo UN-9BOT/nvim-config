@@ -11,7 +11,7 @@ M.config = function()
 				dap = { justMyCode = true },
 				-- Command line arguments for runner
 				-- Can also be a function to return dynamic values
-				args = {  "--quiet" },
+				args = { "-vv" },
 				-- Runner to use. Will use pytest if available by default.
 				-- Can be a function to return dynamic value.
 				runner = "pytest",
@@ -36,7 +36,7 @@ M.config = function()
 	b("n", "<leader>dtl", "<cmd>lua require('neotest').run.run_last()<CR>", opts)
 	b("n", "<leader>dto", "<cmd>lua require('neotest').output.open({enter=true})<CR>", opts)
 	b("n", "<leader>dts", "<cmd>lua require('neotest').run.stop()<CR>", opts)
-	b("n", "<leader>dtf", "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy='dap'})<CR>", opts)
+	b("n", "<leader>dtf", "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<CR>", opts)
 	b("n", "<leader>dti", "<cmd>lua require('neotest').summary.toggle()<CR>", opts)
 
 	b("n", "<leader>dtd", "<ESC>:lua require('dap-python').debug_selection()<CR>", opts)
