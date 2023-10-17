@@ -18,7 +18,7 @@ M.config = function()
 	b({ "n", "v" }, ",v", builtin.grep_string, opts)
 	b({ "n", "v" }, ",r", builtin.registers, opts)
 	b("n", "<c-f>", builtin.current_buffer_fuzzy_find, opts)
-	b("n", ",J", builtin.jumplist, opts)
+	b("n", ",j", builtin.jumplist, opts)
 
 	require("telescope").setup({
 		defaults = {
