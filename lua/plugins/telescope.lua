@@ -6,8 +6,9 @@ local M = {
 M.config = function()
 	local b = vim.keymap.set
 	local opts = { noremap = true, silent = true }
-    local actions = require("telescope.actions")
+	local actions = require("telescope.actions")
 	local builtin = require("telescope.builtin")
+	local def_mapping = { i = { ["<esc>"] = actions.close } }
 
 	b({ "n", "v" }, ",c", builtin.git_bcommits_range, opts)
 	b({ "n", "v" }, ",t", builtin.treesitter, opts)
@@ -19,6 +20,7 @@ M.config = function()
 	b({ "n", "v" }, ",r", builtin.registers, opts)
 	b("n", "<c-f>", builtin.current_buffer_fuzzy_find, opts)
 	b("n", ",j", builtin.jumplist, opts)
+	b("n", ",J", "<CMD> clearjumps<CR>", { noremap = true })
 
 	require("telescope").setup({
 		defaults = {
@@ -106,12 +108,14 @@ M.config = function()
 				theme = "ivy",
 				previewer = true,
 				sorting = "frecency",
+				mappings = def_mapping,
 			},
 			marks = {
 				layout_config = { height = 0.4 },
 				theme = "ivy",
 				previewer = true,
 				sorting = "frecency",
+				mappings = def_mapping,
 			},
 			diagnostics = {
 				layout_config = { height = 0.4 },
@@ -119,6 +123,7 @@ M.config = function()
 				previewer = true,
 				sorting = "frecency",
 				bufnr = 0,
+				mappings = def_mapping,
 			},
 			live_grep = {
 				layout_config = {
@@ -128,6 +133,7 @@ M.config = function()
 					width = 0.95,
 				},
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			git_bcommits_range = {
 				layout_config = {
@@ -137,6 +143,7 @@ M.config = function()
 					width = 0.95,
 				},
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			treesitter = {
 				layout_config = {
@@ -146,6 +153,7 @@ M.config = function()
 					width = 0.95,
 				},
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			grep_string = {
 				layout_config = {
@@ -155,9 +163,11 @@ M.config = function()
 					width = 0.95,
 				},
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			registers = {
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			current_buffer_fuzzy_find = {
 				layout_config = {
@@ -167,6 +177,7 @@ M.config = function()
 					width = 0.95,
 				},
 				theme = "dropdown",
+				mappings = def_mapping,
 			},
 			jumplist = {
 				layout_config = {
