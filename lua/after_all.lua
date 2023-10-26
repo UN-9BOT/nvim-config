@@ -52,3 +52,7 @@ b({ "n", "v" }, ",m", "<cmd>MarksQFListGlobal<cr>", opts)
 
 
 vim.g.mkdp_browser = '/usr/bin/brave'
+
+-- vim.cmd([[
+--     au VimEnter * silent Neotree toggle filesystem reveal position=right
+-- ]])

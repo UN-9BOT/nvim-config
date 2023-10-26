@@ -48,6 +48,24 @@ lazy.setup({
 	{ "haya14busa/vim-asterisk" },
 
 	-- marks
+	--  mx              Set mark x
+	-- m,              Set the next available alphabetical (lowercase) mark
+	-- m;              Toggle the next available mark at the current line
+	-- dmx             Delete mark x
+	-- dm-             Delete all marks on the current line
+	-- dm<space>       Delete all marks in the current buffer
+	-- m]              Move to next mark
+	-- m[              Move to previous mark
+	-- m:              Preview mark. This will prompt you for a specific mark to
+	--                 preview; press <cr> to preview the next mark.
+	--
+	-- m[0-9]          Add a bookmark from bookmark group[0-9].
+	-- dm[0-9]         Delete all bookmarks from bookmark group[0-9].
+	-- m}              Move to the next bookmark having the same type as the bookmark under
+	--                 the cursor. Works across buffers.
+	-- m{              Move to the previous bookmark having the same type as the bookmark under
+	--                 the cursor. Works across buffers.
+	-- dm=             Delete the bookmark under the cursor.
 	{ "chentoast/marks.nvim" },
 
 	-- highlight
@@ -86,6 +104,36 @@ lazy.setup({
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
+	{
+		's1n7ax/nvim-window-picker',
+		version = '2.*',
+		config = function()
+			require 'window-picker'.setup({
+				filter_rules = {
+					include_current_win = false,
+					autoselect_one = true,
+					-- filter using buffer options
+					bo = {
+						-- if the file type is one of following, the window will be ignored
+						filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+						-- if the buffer type is one of following, the window will be ignored
+						buftype = { 'terminal', "quickfix" },
+					},
+				},
+			})
+		end,
+	},
+
+	-- buffer delete :bd bdelete
+	{
+		'echasnovski/mini.bufremove',
+		version = '*',
+		config = function()
+			require('mini.bufremove').setup()
+		end
+	},
+
+
 
 	-- WITH CONFIG
 	--
@@ -104,21 +152,7 @@ lazy.setup({
 	--file manager ( ranger )
 	require("plugins.rnvimr"),
 	-- require("plugins.nvim_tree"),
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		-- cmd = "Neotree",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("neo-tree").setup()
-			vim.cmd([[nnoremap <c-s> :Neotree toggle filesystem reveal position=right<cr>]])
-		end
-
-	},
+	require("plugins.neotree"),
 
 	-- scrolling
 	require("plugins.vim_smooth_scroll"),
@@ -212,6 +246,7 @@ lazy.setup({
 	-- -- Neogit
 	{ "NeogitOrg/neogit",                       config = true },
 	{ "sindrets/diffview.nvim" },
+	{ "tpope/vim-fugitive" },
 
 	-- context func
 	{ "nvim-treesitter/nvim-treesitter-context" },

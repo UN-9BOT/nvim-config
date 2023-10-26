@@ -50,4 +50,5 @@
     ],
     "colors.enable": true,
     "coc.preferences.extensionUpdateCheck": "daily",
+    "yaml.format.enable": true,
 }

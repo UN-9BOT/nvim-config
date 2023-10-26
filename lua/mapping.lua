@@ -36,7 +36,7 @@ b({ "n", "v" }, "<leader>p", '"+p', opts)
 b({ "n", "v" }, "<leader>P", '"+P', opts)
 
 -- delete buffer
-b("n", "Q", "<CMD>Neotree close<CR><CMD>bd<CR>", opts)
+b("n", "Q", "<cmd>lua MiniBufremove.delete()<cr>", opts)
 
 -- для + - перемещения
 -- b("n", "=", "+", opts)
