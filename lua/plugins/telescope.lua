@@ -8,6 +8,7 @@ M.config = function()
 	local opts = { noremap = true, silent = true }
 	local actions = require("telescope.actions")
 	local builtin = require("telescope.builtin")
+	local trouble = require("trouble.providers.telescope")
 	local def_mapping = { i = { ["<esc>"] = actions.close } }
 
 	b({ "n", "v" }, ",c", builtin.git_bcommits_range, opts)
@@ -66,6 +67,10 @@ M.config = function()
 				-- "tests/",
 				"%.html"
 			},
+			mappings = {
+				i = { ["<c-t>"] = trouble.open_with_trouble },
+				n = { ["<c-t>"] = trouble.open_with_trouble },
+			}
 		},
 		extensions = {
 			media_files = {

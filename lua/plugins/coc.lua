@@ -4,13 +4,12 @@ vim.opt.updatetime = 100
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "auto:3"
 local b = vim.keymap.set
 
 b("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
 
 b("n", "gd", "mD<Plug>(coc-definition)", { silent = true })
--- b("n", "gd", "gdzt", { silent = true })  -- for top after  go-definition
 b("n", "gt", "<Plug>(coc-type-definition)", { silent = true })
 b("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 b("n", "gr", "<Plug>(coc-references)", { silent = true })
@@ -75,3 +74,4 @@ vim.g.coc_snippet_prev = "<S-TAB>"
 
 b("n", "<leader>c", ":<C-u>CocList -A --normal yank<CR>", { silent = true })
 vim.cmd([[nnoremap <silent><expr> <leader>i "bea\<BS><c-r>=coc#refresh()\<CR>"]])
+b("n", "<leader>I", "<cmd>Telescope import<CR>", { silent = true })
