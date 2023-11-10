@@ -8,9 +8,15 @@ M.config = function()
 	local opts = { noremap = true, silent = true }
 	local actions = require("telescope.actions")
 	local builtin = require("telescope.builtin")
+	local previewers = require('telescope.previewers')
 	local trouble = require("trouble.providers.telescope")
 	local def_mapping = { i = { ["<esc>"] = actions.close } }
-
+	local delta = previewers.new_termopen_previewer {
+		get_command = function(entry)
+			return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'blame', entry.value .. '^!',
+				'--', entry.current_file }
+		end
+	}
 	b({ "n", "v" }, ",c", builtin.git_bcommits_range, opts)
 	b({ "n", "v" }, ",t", builtin.treesitter, opts)
 
@@ -23,6 +29,17 @@ M.config = function()
 	b("n", "<c-f>", "<CMD>Spectre<CR>", opts)
 	b("n", ",j", builtin.jumplist, opts)
 	b("n", ",J", "<CMD> clearjumps<CR>", { noremap = true })
+	M.my_git_bcommits = function(opts)
+		opts = opts or {}
+		opts.previewer = {
+			delta,
+			previewers.git_commit_message.new(opts),
+			previewers.git_commit_diff_as_was.new(opts),
+		}
+
+		builtin.git_bcommits_range(opts)
+	end
+	b({ "n", "v" }, ",b", M.my_git_bcommits)
 
 	require("telescope").setup({
 		defaults = {

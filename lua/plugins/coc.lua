@@ -4,7 +4,6 @@ vim.opt.updatetime = 100
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
-vim.opt.signcolumn = "auto:3"
 local b = vim.keymap.set
 
 b("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })

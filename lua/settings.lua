@@ -33,7 +33,7 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
 --
 -- всегда отображать левый столбец знаков
-vim.opt.signcolumn = "yes:2"
+vim.opt.signcolumn = "yes:3"
 
 --
 -- подсветка поиска
@@ -137,3 +137,9 @@ end
 vim.g.neovide_background_color = "#5b6178" .. alpha()
 vim.g.mkdp_browser = '/usr/bin/brave'
 
+
+
+vim.api.nvim_exec(
+	[[ au BufRead,BufNewFile *.ain                set syntax=toml ]],
+	false
+)
