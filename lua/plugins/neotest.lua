@@ -1,5 +1,9 @@
 local M = {
-	"nvim-neotest/neotest-python",
+	"nvim-neotest/neotest",
+	dependencies = {
+
+		"nvim-neotest/neotest-python",
+	}
 }
 
 M.config = function()

@@ -1,13 +1,13 @@
--- vim.api.nvim_create_autocmd("VimEnter", {
---   pattern = "*",
---   nested = true,
---   callback = function()
---     vim.cmd("TagbarOpen")
---   end
--- })
+local M = {
+    "preservim/tagbar"
+}
 
-vim.keymap.set("n", "<F8>", ":TagbarToggle<CR>")
+M.config = function()
+    ---@diagnostic disable-next-line: undefined-global
+    local b = vim.keymap.set
+    b("n", "<F8>", ":TagbarToggle<CR>")
+    b("n", "]]", ":TagbarJumpNext<CR>")
+    b("n", "[[", ":TagbarJumpPrev<CR>")
+end
 
-vim.keymap.set("n", "]]", ":TagbarJumpNext<CR>")
-
-vim.keymap.set("n", "[[", ":TagbarJumpPrev<CR>")
+return M

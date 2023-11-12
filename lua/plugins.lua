@@ -19,319 +19,104 @@ if not status_ok then
 end
 
 lazy.setup({
+	-- -----------------------
+	-- NOTE: WITHOUT CONFIG
+	-- -----------------------
 	--
+	{ "nvim-lua/plenary.nvim" }, -- common utilities
+
+	{ "kkharji/sqlite.lua" },    -- sqlite for other plugins
+
+	{ "tribela/vim-transparent" }, -- transparent background
+
+	{ "farmergreg/vim-lastplace" }, -- last position in files
+
+	{ "tpope/vim-surround" },    -- surround ("' [ { }]')  	--> ysiw' | cs'" | ds",
+	{ "tpope/vim-repeat" },      -- repeat for surround
+
+	{ "sindrets/diffview.nvim" }, -- :Diffview
+
+	{ "dhruvasagar/vim-zoom" },  -- ZOOM (leader shift z)
+
+	{ "wellle/targets.vim" },    -- next for textobjects in( an( {["'
+
+	{
+		"NeogitOrg/neogit", -- leader G
+		config = true
+	},
+	{ "tpope/vim-fugitive" },          -- Neogit
+	{ "simeji/winresizer" },           -- resize windows CTRL+e
+	{ "christoomey/vim-tmux-navigator" }, -- tmux navigation for CTRL
+
+
+	-- -----------------------
+	-- NOTE: WITH CONFIG
+	-- -----------------------
 	--
-	-- WITHOUT CONFIG
+	require("plugins.asterisk"),             -- * # highlight without next obj
+	require("plugins.marks"),                -- marks manipulation
+	require("plugins.twilight"),             -- highlight in Zoom mode
+	require("plugins.markdown-preview"),     -- markdown preview :MarkdownPreview
+	require("plugins.mini_bufremove"),       -- buffer delete :bd bdelete
+	require("plugins.my_theme"),             -- themes
+	require("plugins.indent"),               -- indent (отступы)
+
+	require("plugins.rnvimr"),               -- ranger
+	require("plugins.neotree"),              -- neotree
+
+	require("plugins.vim_smooth_scroll"),    -- scrolling
+	require("plugins.bufferline"),           -- buffers on top
+	require("plugins.lualine"),              -- line on bottom
+	require("plugins.treesitter"),           -- highlight syntax
+	require("plugins.sessions"),             -- session
+	require("plugins.telescope"),            -- telescope
+	require("plugins.vim_auto_save"),        -- auto-save files
+	require("plugins.easymotion"),           -- fast motion
+	require("plugins.indent_blankline"),     -- indent blanklin for func
+	require("plugins.rainbow_delimiters"),   -- rainbow brackets and operators
+	require("plugins.nvim_autopairs"),       -- autopairs for brackets
+	require("plugins.comment"),              -- commentary for
+	require("plugins.todo_comments"),        -- TODO: WARNING: FIX: XXX: BUG: NOTE:
+	require("plugins.neogen"),               -- DOC for C
+	require("plugins.zen_mode"),             -- zen mode
+	require("plugins.vim_visual_multi"),     -- multi cursor
+	require("plugins.gitsigns"),             -- right sign inline
+	require("plugins.lazygit"),              -- leader+l+g
+	require("plugins.wilder"),               -- menu vim
+	require("plugins.nvim-treesitter-context"), -- context (leader t c)
+	require("plugins.tagbar"),               -- tagbar F8
+	require("plugins.codeium"),              -- Codeium AI
+	require("plugins.coc"),                  -- LSP
+	require("plugins.ale"),                  -- linters
+	require("plugins.trouble"),              -- quickfix, bug-list and other
+	require("plugins.dap"),                  -- debugger
+	require("plugins.dap_ui"),               -- debugger ui
+	require("plugins.neotest"),              -- tests ui
+	require("plugins.nvim-scrollview"),       -- scroll bar on right
+	require("plugins.telekasten"),           -- notes in markdown
+	require("plugins.hlslens"),              -- for navigate in search mode
+	require("plugins.spectre"),              -- search and replace
+
+	-- ----------------------------
+	-- NOTE: dependencies
+	-- ----------------------------
+	require("plugins.nvim-window-picker"), -- window picker for file_browser
+	require("plugins.nvim_web_devicons"), -- for other plugins, extend with icons
+
+	-- ----------------------------
+	-- NOTE: ARCHIVE
+	-- ----------------------------
 	--
-	--
-	-- helper for lua
-	{ "nvim-lua/plenary.nvim" },
-	{ "kkharji/sqlite.lua" },
-
-	-- transparent for nvim
-	{ "tribela/vim-transparent" },
-
-	-- last place in file
-	{ "farmergreg/vim-lastplace" },
-
-	-- surround ("' [ { }]')  --> ysiw' | cs'" | ds"
-	{ "tpope/vim-surround" },
-	{ "tpope/vim-repeat" }, -- repeat for surround
-
-	-- git diff
-	{ "sindrets/diffview.nvim" },
-
-	-- zoom tab (split)
-	{ "dhruvasagar/vim-zoom" },
-
-	{
-		'piersolenski/telescope-import.nvim',
-		requires = 'nvim-telescope/telescope.nvim',
-		config = function()
-			require("telescope").load_extension("import")
-		end
-	},
-
-	-- * # highlight
-	require("plugins.asterisk"),
-
-	require("plugins.marks"),
-
-	-- highlight
-	{
-		"folke/twilight.nvim",
-		opts = {
-			dimming = {
-				alpha = 0.55, -- amount of dimming
-				-- we try to get the foreground from the highlight groups or fallback color
-				color = { "#ffffff" },
-				term_bg = "#000000", -- if guibg=NONE, this will be used to calculate text color
-				inactive = false, -- when true, other windows will be fully dimmed (unless they contain the same buffer)
-			},
-			context = 10, -- amount of lines we will try to show around the current line
-			treesitter = true, -- use treesitter when available for the filetype
-			-- treesitter is used to automatically expand the visible text,
-			-- but you can further control the types of nodes that should always be fully expanded
-			expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
-				"function",
-				"method",
-				"table",
-				"if_statement",
-			},
-			exclude = {}, -- exclude these filetypes
-		}
-	},
-
-	-- next for move in an In An {["'"]}
-	{ "wellle/targets.vim" },
-	-- { "nvim-treesitter/nvim-treesitter-textobjects" },
-	--
-	-- markdown preview
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
-	},
-	{
-		's1n7ax/nvim-window-picker',
-		version = '2.*',
-		config = function()
-			require 'window-picker'.setup({
-				filter_rules = {
-					include_current_win = false,
-					autoselect_one = true,
-					-- filter using buffer options
-					bo = {
-						-- if the file type is one of following, the window will be ignored
-						filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-						-- if the buffer type is one of following, the window will be ignored
-						buftype = { 'terminal', "quickfix" },
-					},
-				},
-			})
-		end,
-	},
-
-	-- buffer delete :bd bdelete
-	{
-		'echasnovski/mini.bufremove',
-		version = '*',
-		config = function()
-			require('mini.bufremove').setup()
-		end
-	},
-
-
-
-	-- WITH CONFIG
-	--
-	--
-	-- mason (deps)
-	-- require("plugins.mason"),
-
-	-- theme / colorscheme
-	require("plugins.edge"),
-	-- require("plugins.tokyonight"),
-	-- require("plugins.catpuccin"),
-	--
-	-- indent (отступы)
-	require("plugins.indent"),
-
-	--file manager ( ranger )
-	require("plugins.rnvimr"),
-	-- require("plugins.nvim_tree"),
-	require("plugins.neotree"),
-
-	-- scrolling
-	require("plugins.vim_smooth_scroll"),
-
-	-- buffers
-	require("plugins.bufferline"),
-
-	-- bottomline
-	require("plugins.lualine"),
-
-	-- icons
-	require("plugins.nvim_web_devicons"),
-
-	-- treesitter
-	require("plugins.treesitter"),
-
-	-- session
-	require("plugins.sessions"),
-
-	{
-		"prochri/telescope-all-recent.nvim",
-		dependencies = {
-			"kkharji/sqlite.lua",
-			"nvim-telescope/telescope.nvim",
-		},
-		-- lazy = true,
-		config = function()
-			require("telescope-all-recent").setup({
-				close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
-				pickers = {
-					find_files = {
-						disable = false,
-						use_cwd = true,
-						sorting = "frecency",
-					},
-				},
-			})
-		end,
-	},
-
-	-- telescope
-	require("plugins.telescope"),
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-
-	-- auto-save files
-	require("plugins.vim_auto_save"),
-
-	-- fast motion
-	require("plugins.easymotion"),
-
-	-- indent blanklin for func
-	require("plugins.indent_blankline"),
-
-	-- rainbow brackets and operators
-	require("plugins.rainbow_delimiters"),
-
-	-- autopairs for brackets
-	require("plugins.nvim_autopairs"),
-
-	-- commentary for
-	require("plugins.comment"),
-
-	-- TODO: WARNING: FIX: XXX: BUG: NOTE:
-	require("plugins.todo_comments"),
-
-	-- DOC
-	require("plugins.neogen"),
-
-	-- zen mode
-	require("plugins.zen_mode"),
-
-	-- multi cursor
-	require("plugins.vim_visual_multi"),
-	{ "sunjon/shade.nvim" },
-
-	-- TODO: нужно доделать настройки
-	-- GIT
-	-- -- left bar
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("plugins.gitsigns")
-		end,
-	},
-	-- -- Lazy Git
-	require("plugins.lazygit"),
-	-- -- Neogit
-	{ "NeogitOrg/neogit",                       config = true },
-	{ "sindrets/diffview.nvim" },
-	{ "tpope/vim-fugitive" },
-
-	-- context func
-	{ "nvim-treesitter/nvim-treesitter-context" },
-
-	-- menu vim
-	{
-		"gelguy/wilder.nvim",
-		config = function()
-			require("plugins.wilder")
-		end,
-	},
-
-	-- tagbar F8
-	{
-		"preservim/tagbar",
-		config = function()
-			require("plugins.tagbar")
-		end,
-	},
-
-	-- resize windows CTRL+e
-	{ "simeji/winresizer" },
-
-	-- F-motion
-	{
-		"rhysd/clever-f.vim",
-		config = function()
-			require("plugins.clever_f")
-		end,
-	},
-
-	-- Codeium AI
-	{
-		"Exafunction/codeium.vim",
-		config = function()
-			require("plugins.codeium")
-		end,
-	},
-
-	-- python import
-	{ "mgedmin/python-imports.vim" },
-
+	-- { "mgedmin/python-imports.vim" },
 	-- tag for import
-	{
-		"ludovicchabant/vim-gutentags",
-		config = function()
-			require("plugins.gutentags")
-		end,
-	},
-
-	-- lsp
-	{
-		"neoclide/coc.nvim",
-		config = function()
-			require("plugins.coc")
-		end,
-		branch = "release",
-	},
-	{
-		"dense-analysis/ale",
-		config = function()
-			require("plugins.ale")
-		end,
-	},
-	{
-		"folke/trouble.nvim",
-		config = function()
-			require("plugins.trouble")
-		end,
-	},
-
-	-- dap debuger
-	-- { "mfussenegger/nvim-dap" },
-	require("plugins.dap"),
+	-- {
+	-- 	"ludovicchabant/vim-gutentags",
+	-- 	config = function()
+	-- 		require("plugins.gutentags")
+	-- 	end,
+	-- },
 	-- require("plugins.dap_python"),
-	require("plugins.dap_ui"),
-
-	-- neotest
-	{ "nvim-neotest/neotest" },
-	require("plugins.neotest_python"),
-	--
-	--
-	-- tmux
 	-- require("plugins.tmux"),
-	{ "christoomey/vim-tmux-navigator" },
-
-	-- preview
-	{
-		"dstein64/nvim-scrollview",
-		config = function()
-			vim.g.scrollview_diagnostics_severities = {}
-		end,
-	},
-	require("plugins.telekasten"),
-	require("plugins.hlslens"),
-	require("plugins.spectre"),
 	-- require("plugins.telescope-coc"),
 	-- require("plugins.glance"),
 	-- require("plugins.ide"),

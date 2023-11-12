@@ -1,5 +1,4 @@
-local M =
-{
+local M = {
     "Darazaki/indent-o-matic",
 }
 

@@ -1,6 +1,26 @@
 ---@diagnostic disable: undefined-global
 local M = {
 	"nvim-telescope/telescope.nvim",
+	dependencies = {
+		"kkharji/sqlite.lua",           -- for other dependencies
+		"piersolenski/telescope-import.nvim", -- leader shift i = import
+		{
+			"prochri/telescope-all-recent.nvim", -- frecency sorting for Find files
+			config = function()
+				require("telescope-all-recent").setup({
+					close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+					pickers = {
+						find_files = {
+							disable = false,
+							use_cwd = true,
+							sorting = "frecency",
+						},
+					},
+				})
+			end,
+		},
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	},
 }
 
 M.config = function()
@@ -21,7 +41,6 @@ M.config = function()
 	b({ "n", "v" }, ",t", builtin.treesitter, opts)
 
 	b("n", ",f", "<CMD>Telescope find_files<CR>", opts)
-	b("n", ",F", "<CMD>Telescope file_browser<CR>", opts)
 	b("n", ",g", builtin.live_grep, opts)
 	b({ "n", "v" }, ",v", builtin.grep_string, opts)
 	b({ "n", "v" }, ",r", builtin.registers, opts)
@@ -41,7 +60,7 @@ M.config = function()
 	end
 	b({ "n", "v" }, ",b", M.my_git_bcommits)
 
-	require("telescope").setup({
+	local telescope = require("telescope").setup({
 		defaults = {
 			file_ignore_patterns = {
 				"node_modules",
@@ -97,6 +116,13 @@ M.config = function()
 				-- find command (defaults to `fd`)
 				find_cmd = "rg",
 			},
+			fzf = {
+				fuzzy = true,         -- false will only do exact matching
+				override_generic_sorter = false, -- override the generic sorter
+				override_file_sorter = false, -- override the file sorter
+				case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+				-- the default case_mode is "smart_case"
+			}
 		},
 		pickers = {
 			find_files = {
@@ -194,17 +220,11 @@ M.config = function()
 		},
 	})
 	require("telescope").load_extension("fzf")
-	require("telescope").load_extension("file_browser")
+	require("telescope").load_extension("import")
+	-- require("telescope").load_extension('media_files')
+	-- require("telescope").load_extension("live_grep_args")
+	-- require("telescope").load_extension("file_browser")
 end
 
-M.dependencies = {
-	{
-		"prochri/telescope-all-recent.nvim",
-		dependencies = { "kkharji/sqlite.lua" },
-	},
-}
 
 return M
--- require("telescope").load_extension('media_files')
--- require("telescope").load_extension("live_grep_args")
--- require("telescope").load_extension("lazygit")
