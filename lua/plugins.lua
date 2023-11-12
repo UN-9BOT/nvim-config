@@ -24,29 +24,22 @@ lazy.setup({
 	-- -----------------------
 	--
 	{ "nvim-lua/plenary.nvim" }, -- common utilities
-
 	{ "kkharji/sqlite.lua" },    -- sqlite for other plugins
-
 	{ "tribela/vim-transparent" }, -- transparent background
-
 	{ "farmergreg/vim-lastplace" }, -- last position in files
-
 	{ "tpope/vim-surround" },    -- surround ("' [ { }]')  	--> ysiw' | cs'" | ds",
 	{ "tpope/vim-repeat" },      -- repeat for surround
-
 	{ "sindrets/diffview.nvim" }, -- :Diffview
-
 	{ "dhruvasagar/vim-zoom" },  -- ZOOM (leader shift z)
-
 	{ "wellle/targets.vim" },    -- next for textobjects in( an( {["'
-
+	{ "tpope/vim-fugitive" },    -- Neogit
+	{ "jinh0/eyeliner.nvim" },   -- fast F motion and highlight uniq chars
+	{ "chaoren/vim-wordmotion" }, -- word motion extra (split on parts)
 	{
-		"NeogitOrg/neogit", -- leader G
+		"NeogitOrg/neogit",      -- leader G
 		config = true
 	},
-	{ "tpope/vim-fugitive" },          -- Neogit
-	{ "simeji/winresizer" },           -- resize windows CTRL+e
-	{ "christoomey/vim-tmux-navigator" }, -- tmux navigation for CTRL
+
 
 
 	-- -----------------------
@@ -92,10 +85,12 @@ lazy.setup({
 	require("plugins.dap"),                  -- debugger
 	require("plugins.dap_ui"),               -- debugger ui
 	require("plugins.neotest"),              -- tests ui
-	require("plugins.nvim-scrollview"),       -- scroll bar on right
+	require("plugins.nvim-scrollview"),      -- scroll bar on right
 	require("plugins.telekasten"),           -- notes in markdown
 	require("plugins.hlslens"),              -- for navigate in search mode
 	require("plugins.spectre"),              -- search and replace
+	require("plugins.smart-splits"),         -- navigate for tmux and resize (ctrl -> navigate, alt -> resize)
+	require("plugins.vim-matchup"),          -- % match
 
 	-- ----------------------------
 	-- NOTE: dependencies
@@ -120,4 +115,6 @@ lazy.setup({
 	-- require("plugins.telescope-coc"),
 	-- require("plugins.glance"),
 	-- require("plugins.ide"),
+	-- { "christoomey/vim-tmux-navigator" }, -- tmux navigation for CTRL
+	-- { "simeji/winresizer" }, -- resize windows CTRL+e
 })
